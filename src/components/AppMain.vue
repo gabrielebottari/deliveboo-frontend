@@ -14,7 +14,12 @@ export default {
 <template>
     <main>
         MAIN
+        Gabriele
     </main>
+
+    <div>
+        salve
+    </div>
 
     <div>
         ciao
