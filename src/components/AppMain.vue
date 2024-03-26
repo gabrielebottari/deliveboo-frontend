@@ -15,6 +15,10 @@ export default {
     <main>
         MAIN
     </main>
+
+    <div>
+        ciao
+    </div>
 </template>
 
 <style lang="scss" scoped>
