@@ -14,6 +14,7 @@ export default {
 <template>
     <main>
         MAIN
+        Gabriele
     </main>
 </template>
 
