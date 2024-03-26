@@ -16,6 +16,10 @@ export default {
         MAIN
         Gabriele
     </main>
+
+    <div>
+        salve
+    </div>
 </template>
 
 <style lang="scss" scoped>
