@@ -12,18 +12,7 @@ export default {
 </script>
 
 <template>
-    <main>
-        MAIN
-        Gabriele
-    </main>
-
-    <div>
-        salve
-    </div>
-
-    <div>
-        ciao
-    </div>
+    <router-view></router-view>
 </template>
 
 <style lang="scss" scoped>
