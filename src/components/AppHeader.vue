@@ -15,32 +15,41 @@ export default {
     <!--Container dell'header-->
     <div class="container-fluid bg-danger text-center classe">
         <div class="row p-3">
-            <!--PARTE SINISTRA DELL'HEADER-->
-            <div class="col-md text-start bg-">
-                DELIVEBOO???
-            </div>
-
-            <nav class="navbar bg-body-tertiary">
+            
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                    <img src="" alt="Logo" class="align-text-top">
-                        DeliveBoo
+                    <!--Parte sinistra dell'header-->
+                    <a class="navbar-brand logo-container" href="#">
+                        <img src="/src/assets/img/deliveboo.png" class="rounded-circle" alt="">
                     </a>
+                    <!--Parte destra dell'header-->
+
+                    <!--toggle responsive: da decidere l'estetica, per poi correggerlo-->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon bg-white"></span>
+                    </button>
+
+                    <!--vari bottoni con i link: decidere se va bene, per poi correggere-->
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ms-auto">
+                            <!--Link delle varie pagine-->
+                            <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
+                                <button type="button" class="btn btn-primary me-4">Left</button>
+                                <button type="button" class="btn btn-primary me-4">Middle</button>
+                                <button type="button" class="btn btn-primary me-4">Right</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </nav>
-                
-            
-            <!--PARTE DESTRA DELL'HEADER-->
-            <div class="btn-group col-md" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-primary">Accedi</button>
-                <button type="button" class="btn btn-primary">Registrati</button>
-                <button type="button" class="btn btn-primary">Profilo</button>
-            </div>
 
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-
+    .logo-container > img {
+        height: 50px;
+        width: 150px;
+    }
 </style>
