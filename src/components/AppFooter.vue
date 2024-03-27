@@ -12,9 +12,12 @@ export default {
 </script>
 
 <template>
-    <footer>
-        FOOTER
-    </footer>
+    <div class="container-fluid bg-black text-white">
+        <div>
+            sinistra
+        </div>
+        
+    </div>
 </template>
 
 <style lang="scss" scoped>

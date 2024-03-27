@@ -1,4 +1,5 @@
 <script>
+
 export default {
     data() {
         return {
@@ -13,17 +14,9 @@ export default {
 
 <template>
     <main>
-        MAIN
-        Gabriele
+        <div>
+        </div>
     </main>
-
-    <div>
-        salve
-    </div>
-
-    <div>
-        ciao
-    </div>
 </template>
 
 <style lang="scss" scoped>

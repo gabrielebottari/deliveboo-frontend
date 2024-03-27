@@ -21,11 +21,6 @@ export default {
 </script>
 
 <template>
-    <h1 class="text-center text-danger p-3">
-        Mia App
-        Commit michail
-    </h1>
-
     <AppHeader />
 
     <AppMain />
