@@ -13,10 +13,7 @@ export default {
 </script>
 
 <template>
-    <main>
-        <div>
-        </div>
-    </main>
+    <router-view></router-view>
 </template>
 
 <style lang="scss" scoped>
