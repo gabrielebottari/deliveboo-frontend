@@ -1,36 +1,51 @@
+<script>
+export default {
+    data() {
+        return {
+
+        };
+    },
+    methods: {
+
+    }
+}
+</script>
+
+
 <template>
     <!--Header che si ricollega all'header generale-->
-    <header class="">
-        
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="../assets/img/deliveboo.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="../assets/img/" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+    <header>
+        <!--Container principale dell'header della homepage, che si ricollegherà all'header generale-->
+        <div class="container-fluid homepage-header bg-danger">
 
+            <h2>
+                I migliori piatti che puoi trovare in circolazione
+            </h2>
+                    
+            <!--ricerca per indirizzo-->
+            
+            <nav class="navbar bg-danger">
+            <div class="container-fluid text-center">
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            </nav>
+
+        </div>
+        
     </header>
    
 </template>
 
 <style lang="scss" scoped>
-    header{
+    .homepage-header {
         height: 400px;
-        
+        padding: 50px 500px 50px 500px;
+    }
+    .homepage-header > h2 {
+        margin-bottom: 100px;
+        margin-left: 90px;
     }
 </style>
