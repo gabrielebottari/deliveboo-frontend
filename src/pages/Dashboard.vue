@@ -36,8 +36,8 @@ export default {
             <div class="row">
                 <div class="col cards" v-for="card in cards">
                     <div class="my-card">
-                        <div class="card-img">
-                            <div>i'm the img of this card</div>
+                        <div class="card-img-bg">
+                            <img :src=card.img alt="">
                         </div>
                         <div class="card-content">and i'm the text of this card</div>
                     </div>
@@ -59,20 +59,36 @@ main {
 
     .container {
         max-width: 60%;
+        padding-top: 50px;
+        padding-bottom: 50px;
 
         .cards {
 
-            width: calc(90% / 3);
-            
-            
-            border: 5px solid black;
             
             .my-card {
+
+                display: flex;
+                flex-direction: column;
+                transition: 0.5s;
+
+                width: 90%;
+
+                border-radius: 10px;
                 background: lightgrey;
-                height: 200px;
-    
-                .card-img {
+                box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.75);
+                
+                
+                .card-img-bg {
                     background: darkgrey;
+
+
+                    img {
+                        position: relative;
+                        top: 0;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: fill;
+                    }
                 }
             }
         }     
