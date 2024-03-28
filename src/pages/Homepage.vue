@@ -16,7 +16,7 @@ export default {
     <!--Header che si ricollega all'header generale-->
     <header>
         <!--Container principale dell'header della homepage, che si ricollegherà all'header generale-->
-        <div class="container-fluid homepage-header bg-danger">
+        <div class="container-fluid homepage-header bg-primary">
 
             <h2>
                 I migliori piatti che puoi trovare in circolazione
