@@ -1,98 +1,156 @@
 <script>
+
+import AppMyMenu from '../components/AppMyMenu.vue';
+import AppOrders from '../components/AppOrders.vue';
+import AppSingleDish from '../components/AppSingleDish.vue';
+import AppStatistics from '../components/AppStatistics.vue';
+
 export default {
   data() {
     return {
       cards: [
         {
-          title: "Il Mio Menù",
-          img:
-            "https://media.istockphoto.com/id/96430985/it/foto/pancake.jpg?s=2048x2048&w=is&k=20&c=27bCjgpBLWif3mvJzRuHQOugikYP6xb34mzVvRIp00o=",
-          link: "",
+            title: "I miei Piatti",
+            img: "fa-solid fa-utensils",
+            link: "",
+
         },
         {
-          title: "Il Mio Menù",
-          img:
-            "https://media.istockphoto.com/id/96430985/it/foto/pancake.jpg?s=2048x2048&w=is&k=20&c=27bCjgpBLWif3mvJzRuHQOugikYP6xb34mzVvRIp00o=",
-          link: "",
+            title: "I miei ordini",
+            img: "fa-regular fa-rectangle-list",
+            link: "",
         },
         {
-          title: "Il Mio Menù",
-          img:
-            "https://media.istockphoto.com/id/96430985/it/foto/pancake.jpg?s=2048x2048&w=is&k=20&c=27bCjgpBLWif3mvJzRuHQOugikYP6xb34mzVvRIp00o=",
-          link: "",
+            title: "Le mie statistiche",
+            img: "fa-solid fa-chart-line",
+            link: "",
         },
       ],
     };
   },
+  components: {
+    AppMyMenu,
+    AppOrders,
+    AppSingleDish,
+    AppStatistics,
+  }
 };
 </script>
 
 <template>
-    <main>
+    <main class="debug">
 
                     <!-- cards created using a for cicle -->
 
         <div class="container">
             <div class="row">
                 <div class="col cards" v-for="card in cards">
-                    <div class="my-card">
-                        <div class="card-img-bg">
-                            <img :src=card.img alt="">
+                    <a @click="">
+                        <div class="my-card">
+                            <div class="card-img-bg">
+                                <div>
+                                    <i :class="card.img" class="fontawesome-icon"></i>
+                                </div>
+                            </div>
+                            <div class="card-content">
+                                <h3>{{ card.title }}</h3>
+                            </div>
                         </div>
-                        <div class="card-content">and i'm the text of this card</div>
-                    </div>
+                    </a>
                 </div>
             </div>
+        </div>
+        <div>
+            <AppMyMenu/>
         </div>
     </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
-.row * {
+.row * 
+{
     padding: 0;
 }
 
-main {
-  background: linear-gradient(45deg, #fffb00, #12c600);
-  opacity: 0.8;
+main 
+{
+  background: linear-gradient(45deg, #ffff23, #12a600);
 
-    .container {
+
+    .container 
+    {
         max-width: 60%;
         padding-top: 50px;
         padding-bottom: 50px;
 
-        .cards {
-
+        .cards 
+        {
             
-            .my-card {
+            a
+            {
+                text-decoration: none;
+                color: black;
+            }
 
-                display: flex;
-                flex-direction: column;
-                transition: 0.5s;
-
-                width: 90%;
-
+            .my-card 
+            {
                 border-radius: 10px;
-                background: lightgrey;
-                box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.75);
-                
-                
-                .card-img-bg {
-                    background: darkgrey;
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                background: linear-gradient(0deg, #37eee0, white);
+                box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
+
+                .card-img-bg 
+                {
+                    width: 70%;
+                    margin: 20px auto;
+                    background: linear-gradient(0deg, white, #37eee0);
+                    text-align: center;
+                    border-radius: 10px;
 
 
-                    img {
-                        position: relative;
-                        top: 0;
-                        height: 100%;
-                        width: 100%;
-                        object-fit: fill;
+                    .fontawesome-icon
+                    {
+                        width: 100px;
+                        height: 100px;
+                        line-height: 100px;
+                        font-size: 50px;
+                        color: #12a600;
+                        vertical-align: middle;
+                        border: 3px solid black;
+                        border-radius: 60%;
+                        margin: 30px;
                     }
                 }
+
+                .card-content
+                {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    text-align: center;
+                    transition: 2s;
+                }
+
+            }
+
+            .my-card:hover
+            {
+                transform: scale(1.05);
+                background: linear-gradient(0deg, white, #37eee0);
+                transition-duration: 0.5s;
             }
         }     
     }
+}
+
+/* DEBUG */
+
+main.debug 
+{
+    height: 800px;
 }
 
 </style>
