@@ -1,4 +1,10 @@
 <script>
+
+import AppMyMenu from '../components/AppMyMenu.vue';
+import AppOrders from '../components/AppOrders.vue';
+import AppSingleDish from '../components/AppSingleDish.vue';
+import AppStatistics from '../components/AppStatistics.vue';
+
 export default {
   data() {
     return {
@@ -22,6 +28,12 @@ export default {
       ],
     };
   },
+  components: {
+    AppMyMenu,
+    AppOrders,
+    AppSingleDish,
+    AppStatistics,
+  }
 };
 </script>
 
@@ -33,7 +45,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col cards" v-for="card in cards">
-                    <a href="">
+                    <a @click="">
                         <div class="my-card">
                             <div class="card-img-bg">
                                 <div>
@@ -48,10 +60,13 @@ export default {
                 </div>
             </div>
         </div>
+        <div>
+            <AppMyMenu/>
+        </div>
     </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .row * 
 {
@@ -61,6 +76,7 @@ export default {
 main 
 {
   background: linear-gradient(45deg, #ffff23, #12a600);
+
 
     .container 
     {
@@ -84,14 +100,14 @@ main
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
-                background: linear-gradient(0deg, #00d7ff, white);
+                background: linear-gradient(0deg, #37eee0, white);
                 box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.3);
 
                 .card-img-bg 
                 {
                     width: 70%;
                     margin: 20px auto;
-                    background: linear-gradient(0deg, white, #00d7ff);
+                    background: linear-gradient(0deg, white, #37eee0);
                     text-align: center;
                     border-radius: 10px;
 
@@ -123,15 +139,12 @@ main
             .my-card:hover
             {
                 transform: scale(1.05);
-                transition-duration: 0.3s;
-                background: linear-gradient(0deg, white, #00d7ff);
-
+                background: linear-gradient(0deg, white, #37eee0);
+                transition-duration: 0.5s;
             }
         }     
     }
 }
-
-
 
 /* DEBUG */
 
