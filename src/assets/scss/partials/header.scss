@@ -48,6 +48,10 @@
     padding: 0.5rem;
 }
 
+.offcanvas-body, .offcanvas-header{
+    background-color: #F7CD1F;
+}
+
 .navbar-brand{
     font-weight: 500;
     color: #161f28;
@@ -79,13 +83,13 @@
 }
 
 .nav-link {
-    color: red;
+    color: #39526A;
     font-weight: 500;
     position: relative;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #F7CD1F;
+    color: #161f28;
 }
 
 @media (min-width: 991px) {
