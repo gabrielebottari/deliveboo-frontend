@@ -12,66 +12,60 @@ export default {
 </script>
 
 <template>
-    <!--Container dell'header-->
-    <div class="container-fluid text-center header-container">
-        <div class="row p-3">
+    <!--NAVBAR-->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Logo</a>
             
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <!--Parte sinistra dell'header-->
-                    <a class="navbar-brand logo-container" href="#">
-                        <img src="/src/assets/img/deliveboo.png" class="rounded-circle" alt="">
-                    </a>
-                    <!--Parte destra dell'header-->
-
-                    <!--toggle responsive: da decidere l'estetica, per poi correggerlo-->
-                    <!--<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon p-3"></span>
-                    </button>
-                    -->
-
-                    <!--Offcanvas-->
-                    <div>
-                        offcanvas
-                    </div>
-                    <!--vari bottoni con i link: decidere se va bene, per poi correggere-->
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav ms-auto">
-                            <!--Link delle varie pagine-->
-                               
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle me-4 px-4 py-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Entra nel nostro team!
-                                </button>
-                                <ul class="dropdown-menu px-5 py-2">
-                                    <li><a class="dropdown-item me-4 px-4 py-2 text-center" href="#">Deliveboo</a></li>
-                                    <li><a class="dropdown-item me-4 px-4 py-2 text-center" href="#">Consegne</a></li>
-                                    <li><a class="dropdown-item me-4 px-4 py-2 text-center" href="#">Partner</a></li>
-                                </ul>
-                            </div>
-                            <button type="button" class="btn me-4 px-4 py-2">Login</button>
-                            <button type="button" class="btn me-4 px-4 py-2">Account</button>
-                        </div>
-                    </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Logo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
-            </nav>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Portfoli</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="login-button">Login</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <!--FINE NAVBAR-->
+
+    <!--DECIDERE SE METTERE O NO-->
+    <!--CONCEPT BACKGROUND HEADER,-->
+    <section class="background-header">
+        <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+            <h1>
+                Deliveboo
+            </h1>
+            <h2>
+                Buono da far paura
+            </h2>
 
         </div>
-    </div>
+    </section>
+    <!--FINE BACKGROUND HEADER-->
 </template>
 
 <style lang="scss" scoped>
-    @import "../assets/scss/partials/header.scss";
-    .offcanvas {
-        background-color: #39526A;
-        max-width: 200px;
-    }
-    .offcanvas-hidden {
-    display: none;
-}
-
-.offcanvas-body-hidden {
-    visibility: hidden;
-}
-
+   @import "../assets/scss/partials/header.scss";
 </style>

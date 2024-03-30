@@ -122,10 +122,6 @@ export default {
 
 <style lang="scss" scoped>
     header{
-        background-image: url(/src/assets/img/deliveboo.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
     }
     .homepage-header-left {
         height: 700px;
