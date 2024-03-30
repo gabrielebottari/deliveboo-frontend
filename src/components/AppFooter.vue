@@ -12,94 +12,127 @@ export default {
 </script>
 
 <template>
-    <div class="container-fluid bg-black text-white p-5">
-        
-        <!--Card del footer contenenti link ed altro-->
-        <div class="row">
-            <div class="col-sm-3 mb-3 mb-sm-0">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Scopri Deliveboo</h5>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                    </div>
-                </div>
+
+<!--Card del footer contenenti link ed altro-->
+<footer class="bg-dark text-white pb-4 pt-5">
+    <div class="container text-center text-md-left justify-content-around">
+
+        <div class="row text-center text-md-left">
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                    Scopri Deliveboo
+                </h5>
+                <p>
+                    <a href="#">Investitori</a>
+               </p>
+               <p>
+                    <a href="#">Chi siamo</a>
+               </p>
+               <p>
+                    <a href="#">Ristoranti</a>
+               </p>
+               <p>
+                    <a href="#">Altro</a>
+               </p>
+               <p>
+                    <a href="#">Pressroom</a>
+               </p>
+               <p>
+                    <a href="#">Programmazione</a>
+               </p>
+               <p>
+                    <a href="#">Design</a>
+               </p>
+               <p>
+                    <a href="#">Lavora con noi</a>
+               </p>
+               <p>
+                    <a href="#">Diventa nostro partner</a>
+               </p>
             </div>
 
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Note legali</h5>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                    </div>
-                </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                    note legali
+                </h5>
+                <p>
+                    <a href="#">Termini & Condizioni</a>
+                </p>
+                <p>
+                    <a href="#">Informativa sulla privacy</a>
+                </p>
+                <p>
+                    <a href="#">cookies</a>
+                </p>
+                <p>
+                    <a href="#">Classificazione dei partner</a>
+                </p>
+                <p>
+                    <a href="#">Richieste da parte delle Autorità Pubbliche</a>
+                </p>
             </div>
 
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Aiuto</h5>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                    </div>
-                </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                    Aiuto
+                </h5>
+                <p>
+                    <a href="#">Contatti</a>
+                </p>
+                <p>
+                    <a href="#">FAQ</a>
+                </p>
+                <p>
+                    <a href="#">Tipi di cucina</a>
+                </p>
             </div>
 
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Porta Deliveroo con te</h5>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                        <a href="">Investitori</a>
-                        <br>
-                    </div>
-                </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                    Porta Deliveroo con te
+                </h5>
+                <button class="btn btn-primary">
+                    Scarica google
+                </button>
+                <button class="btn btn-primary">
+                    Scarica mac
+                </button>
             </div>
+
         </div>
 
-        <!--Loghi dei social finali-->
+        <hr class="mb-4">
 
-        <div class="social-logo">
-            <p>
-                Facebook
-            </p>
-            <p>
-                Instagram
-            </p>
-            <p>
-                Twitter
-            </p>
+        <div class="row align-items-center">
+
+            <div class="col-md-7 col-lg-8">
+                <p>
+                    Copyright
+                    <a href="#">
+                        <strong>providers</strong>
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-md-5 col-lg-4">
+                <div class="text-center text-md-right">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="#" class="btn-floating btn-sm text-white">
+                                facebook
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
-
 
     </div>
+</footer>
+
 </template>
 
 <style lang="scss" scoped>
+    @import "../assets/scss/partials/footer.scss";
 </style>

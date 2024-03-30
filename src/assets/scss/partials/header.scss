@@ -1,0 +1,41 @@
+.logo-container > img {
+    height: 50px;
+    width: 150px;
+}
+.header-container{
+    background-color: #F7CD1F;
+}
+.btn {
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.dropdown-menu {
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.dropdown-item {
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.dropdown-item:hover {
+    background-color: #39526A;
+    color: white;
+}
+.navbar-toggler-icon > *{
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.navbar-toggler{
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.button-try {
+    display: none;
+    color: chartreuse;
+}
+
+@media only screen and (max-width: 400px) {
+    .offcanvas-body > * {
+        display: inline;
+    }
+}

@@ -70,58 +70,54 @@ export default {
    <div class="p-5">
 
         <!--bottoni per le città-->
+
         <div>
 
             <div class="text-center mb-3">
-                Immagine che ricorda città
+                Immagine città
             </div>
             <h2 class="text-center mb-5">
-                Città Principali
+                Città
             </h2>
 
-            <!--div contenente bottoni per le città-->
+            <!--div contenente bottoni per le categorie-->
             <div class="d-flex justify-content-around">
                 
-                <button type="button" class="btn btn-danger dropdown-toggle py-2 px-5" data-bs-toggle="dropdown" aria-expanded="true">
-                    Roma
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Parioli</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
+                <button type="button" class="btn btn-success">Roma</button>
 
-                <button type="button" class="btn btn-danger dropdown-toggle py-2 px-5" data-bs-toggle="dropdown" aria-expanded="false">
-                    Action
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
+                <button type="button" class="btn btn-success">Firenze</button>
 
-                <button type="button" class="btn btn-danger dropdown-toggle py-2 px-5" data-bs-toggle="dropdown" aria-expanded="false">
-                    Action
-                </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
-
-                
+                <button type="button" class="btn btn-success">Milano</button>
 
             </div>
-            
-        </div>
 
+        </div>        
+
+        <!--bottoni per le Categorie-->
+        <div>
+
+            <div class="text-center mb-3">
+                Immagine categorie
+            </div>
+            <h2 class="text-center mb-5">
+                Categorie
+            </h2>
+
+            <!--div contenente bottoni per le categorie-->
+            <div class="d-flex justify-content-around">
+                
+                <button type="button" class="btn btn-success">Primi</button>
+
+                <button type="button" class="btn btn-success">Secondi</button>
+
+                <button type="button" class="btn btn-success">Dolci</button>
+
+            </div>
+
+        </div>
+        
    </div>
+
 </template>
 
 <style lang="scss" scoped>
