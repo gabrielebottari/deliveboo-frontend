@@ -1,7 +1,14 @@
 * {
-    text-decoration: none;
+    text-decoration: hidden;
 }
 a {
     //background-color: #39526A;
     color: #F7CD1F;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline solid;
+    text-decoration-color:#F7CD1F;
+    line-height: 1.5;
+    
 }

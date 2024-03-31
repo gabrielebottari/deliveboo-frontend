@@ -23,7 +23,7 @@ export default {
                     Scopri Deliveboo
                 </h5>
                 <p>
-                    <a href="#">Investitori</a>
+                    <a href="#"class="prova">Investitori</a>
                </p>
                <p>
                     <a href="#">Chi siamo</a>

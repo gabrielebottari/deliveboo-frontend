@@ -1,12 +1,13 @@
 <script>
+
+
 export default {
     data() {
         return {
-
+            
         };
     },
     methods: {
-
     }
 }
 </script>
@@ -29,13 +30,13 @@ export default {
                             <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#">About</a>
+                            <a class="nav-link mx-lg-2" href="#">Carrello</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#">Services</a>
+                            <a class="nav-link mx-lg-2" href="#">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link mx-lg-2" href="#">Portfoli</a>
+                            <a class="nav-link mx-lg-2" href="#">Menù</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link mx-lg-2" href="#">Contact</a>
