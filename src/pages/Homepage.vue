@@ -129,10 +129,111 @@ export default {
 
     </section>
    
-   <!--parte dell'homepage che contiene una serie di bottoni per LE CATEGORIE-->
-   <div class="p-5 bg-danger">
+   <!--parte dell'homepage che contiene LE CATEGORIE-->
+   <div class="categories-container">
+    <div class="container py-5">
+        <h1 class="text-center">
+            Migliori categorie
+        </h1>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
+
+            <div class="col">
+                <div class="card categories-card">
+                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Cinese</h3>
+                        <p class="card-text">
+                            I migliori ristoranti cinesi
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-around mb-5">
+                        <a href="#" class="btn">Vai alla pagina</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card categories-card">
+                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Cinese</h3>
+                        <p class="card-text">
+                            I migliori ristoranti cinesi
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-around mb-5">
+                        <a href="#" class="btn">Vai alla pagina</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card categories-card">
+                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Cinese</h3>
+                        <p class="card-text">
+                            I migliori ristoranti cinesi
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-around mb-5">
+                        <a href="#" class="btn">Vai alla pagina</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card categories-card">
+                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Cinese</h3>
+                        <p class="card-text">
+                            I migliori ristoranti cinesi
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-around mb-5">
+                        <a href="#" class="btn">Vai alla pagina</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card categories-card">
+                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Cinese</h3>
+                        <p class="card-text">
+                            I migliori ristoranti cinesi
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-around mb-5">
+                        <a href="#" class="btn">Vai alla pagina</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card categories-card">
+                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Cinese</h3>
+                        <p class="card-text">
+                            I migliori ristoranti cinesi
+                        </p>
+                    </div>
+                    <div class="d-flex justify-content-around mb-5">
+                        <a href="#" class="btn">Vai alla pagina</a>
+                    </div>
+                </div>
+            </div>
+
         
+        </div>
+    
    </div>
+   </div>
+   
   
 
 </template>

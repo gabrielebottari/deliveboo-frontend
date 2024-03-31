@@ -87,3 +87,36 @@ h6{
     color: #F7CD1F;
     border-color: #F7CD1F;
 }
+//categorie
+.categories-container {
+    background-color: #F7CD1F;
+}
+.card-img-top {
+    border-radius: 50px;
+    padding: 20px;
+}
+.categories-card {
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.categories-card > .card-body {
+    padding: 25px;
+    margin-top: -15px;
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.categories-card > .card-body > * {
+    background-color: #39526A;
+}
+.categories-card > .d-flex > a {
+    border-radius: 50px;
+    width: 120px;
+    color: #39526A;
+    background-color: #F7CD1F;
+}
+.categories-card > .d-flex > a:hover {
+    background-color: #39526A;
+    color: #F7CD1F;
+}
