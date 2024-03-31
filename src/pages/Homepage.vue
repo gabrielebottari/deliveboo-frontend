@@ -5,46 +5,77 @@ export default {
         return {
 
         };
-    },
-    methods: {
-
     }
 }
 </script>
 
 
 <template>
-    <!--Header che si ricollega all'header generale-->
-    <header>
-        <!--Container principale dell'header della homepage, che si ricollegherà all'header generale-->
-        <div class="row container-fluid">
 
-        <!--QUI è LA PRIMA PARTE DELLA HOMEPAGE-->
-            <!--Questa è la parte sinistra della homepage-->
-            <div class="col container-fluid homepage-header-left">
-                <!--vuoto-->
+    <!--Carosello con i piatti-->
+    <!--Metterci i migliori in base alle valutazioni?-->
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/cheeseburger.jpg" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
-            <!--Questa è la parte destra della homepage-->
-            <div class="col container-fluid homepage-header-right pt-5">
-
-                <h2 class="text-center title-research-bar">
-                    I migliori piatti che puoi trovare in circolazione
-                </h2>
-                        
-                <!--ricerca per indirizzo-->
-                <nav class="navbar justify-content-around" id="search-address">
-                        <form class="d-flex" role="search">
-                        <!--placeholder con indirizzo-->
-                        <input class="form-control me-2" type="search" placeholder="Inserisci il tuo indirizzo" aria-label="Search">
-                        <!--tasto per far partire la ricerca-->
-                        <button class="btn btn-outline-success bg-white" type="submit">Cerca</button>
-                        </form>
-                </nav>       
-
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/margherita-pizza.jpg" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/bbq-ribs.jpg" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card">
+                    <div class="img-wrapper">
+                        <img src="../assets/img/french-fries.jpg" alt="...">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
             </div>
         </div>
-        
-    </header>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+   <!--Fine Carosello-->
 
     <!--Parte dell'homepage che conterrà le mappe oppure un consiglio di ristoranti-->
     <div class="p-5 bg-danger justify-content-center d-flex">
@@ -117,22 +148,10 @@ export default {
         </div>
         
    </div>
+  
 
 </template>
 
 <style lang="scss" scoped>
-    header{
-    }
-    .homepage-header-left {
-        height: 700px;
-    }
-    .homepage-header-left > img {
-        max-width: 300px;
-    }
-    #search-address{
-      margin-top: 100px;
-    }
-    .title-research-bar{
-        font-size: 40px;
-    }
+    @import "../assets/scss/partials/homepage.scss";
 </style>
