@@ -78,74 +78,59 @@ export default {
    <!--Fine Carosello-->
 
     <!--Parte dell'homepage che conterrà le mappe oppure un consiglio di ristoranti-->
-    <div class="p-5 bg-danger justify-content-center d-flex">
-        <!--homepage, mappe?? consigli ristoranti??-->
-        <div class="card mb-3 p-5" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="...">
+    <section class="section-map">
+        
+        <div class="container container-section-map">
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="main-content">
+                        <h1>
+                            Controlla dove sono i tuoi ordini
+                        </h1>
+
+                        <p>
+                            Puoi seguire tutti gli spostamenti del tuo cibo, attraverso il rider che te lo consegnerà!
+                        </p>
+
+                        <div class="download-map-menu mt-4 justify-content-evenly d-flex">
+                            
+                            <div class="btn">
+                                Play store
+                            </div>
+
+                            <div class="btn">
+                                Mac
+                            </div>
+                            
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">Esempio</h5>
-                    <p class="card-text">Mappe? Ristoranti consigliati?</p>
-                    <p class="card-text"><small class="text-body-secondary">Da decidere</small></p>
-                </div>
+                <div class="col-12 col-md-8 col-lg-8">
+                    <div class="card p-4 card-map">
+                        <h3>
+                            Mappa
+                        </h3>
+                        <div class="map-wrapper">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d92181.05523497718!2d11.240967900000001!3d43.77995815000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a56a680d2d6ad%3A0x93d57917efc72a03!2sFirenze%20FI!5e0!3m2!1sit!2sit!4v1711868064989!5m2!1sit!2sit" 
+                                width="600" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                class="">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-    </div>
+    </section>
    
-   <!--parte dell'homepage che contiene una serie di bottoni per link-->
-   <div class="p-5">
-
-        <!--bottoni per le città-->
-
-        <div>
-
-            <div class="text-center mb-3">
-                Immagine città
-            </div>
-            <h2 class="text-center mb-5">
-                Città
-            </h2>
-
-            <!--div contenente bottoni per le categorie-->
-            <div class="d-flex justify-content-around">
-                
-                <button type="button" class="btn btn-success">Roma</button>
-
-                <button type="button" class="btn btn-success">Firenze</button>
-
-                <button type="button" class="btn btn-success">Milano</button>
-
-            </div>
-
-        </div>        
-
-        <!--bottoni per le Categorie-->
-        <div>
-
-            <div class="text-center mb-3">
-                Immagine categorie
-            </div>
-            <h2 class="text-center mb-5">
-                Categorie
-            </h2>
-
-            <!--div contenente bottoni per le categorie-->
-            <div class="d-flex justify-content-around">
-                
-                <button type="button" class="btn btn-success">Primi</button>
-
-                <button type="button" class="btn btn-success">Secondi</button>
-
-                <button type="button" class="btn btn-success">Dolci</button>
-
-            </div>
-
-        </div>
+   <!--parte dell'homepage che contiene una serie di bottoni per LE CATEGORIE-->
+   <div class="p-5 bg-danger">
         
    </div>
   
