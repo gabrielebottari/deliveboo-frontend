@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         GetCardContent: function (component) {
-
+            // prendi l'elemento e sposto nella lista carrello
         }
     }
 };
@@ -51,7 +51,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col cards" v-for="card in cards">
-                    <a @click="$emit('Event')">
+                    <a>
                         <div class="my-card">
                             <div class="card-img-bg">
                                 <div>
@@ -68,7 +68,10 @@ export default {
         </div>
         <div class="active">
             <div class="card-link-content">
-                <AppMyMenu/>
+                <!-- <AppMyMenu/> -->
+                <AppOrders/>
+                <!-- <AppMyMenu/> -->
+                <!-- <AppMyMenu/> -->
             </div>
         </div>
     </main>
