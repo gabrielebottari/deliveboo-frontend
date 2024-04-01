@@ -22,14 +22,21 @@ export default {
 
 <template>
 
-    <AppHeader />
+    <div class="container-app">
 
-    <AppMain />
+        <AppHeader />
 
-    <AppFooter />
+        <AppMain />
+
+        <AppFooter />
+        
+    </div>
 </template>
 
 <style lang="scss">
 @use "assets/scss/main" as *;
 @import "assets/scss/partials/reset";
+.container-app{
+    background-color: #F7CD1F;
+}
 </style>
