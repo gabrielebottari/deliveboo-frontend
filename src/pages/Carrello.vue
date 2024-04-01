@@ -41,7 +41,7 @@ export default {
     <div class="container p-4">
         <div class="row">
             <div class="col-8">
-                <small class="text-muted">Full name as displayed</small>
+                <small class="text-muted">Procedere</small>
                 <h4>
                     Indirizzo di pagamento
                 </h4>
@@ -51,11 +51,11 @@ export default {
                         <input type="text" class="form-control">
                     </div>
                     <div class="col-6 my-2">
-                        <label for="firstname" class="my-2">Cognome</label>
+                        <label for="lastname" class="my-2">Cognome</label>
                         <input type="text" class="form-control">
                     </div>
                     <div class="col-12 my-2">
-                        <label for="" class="my-2">Email</label>
+                        <label for="email" class="my-2">Email</label>
                         <div class="input-group">
                             <span class="input-group-text">
                                 @
@@ -64,11 +64,10 @@ export default {
                         </div>
                     </div>
                     <div class="col-12 my-2">
-                        <label for="lastname" class="form-label">Dettagli dell'ordine</label>
-                        <input type="text" id="lastname" class="form-control text-muted" placeholder="Es: Campanello rotto, chiamare al telefono, ecc. ecc.">
+                        <label for="order" class="form-label">Dettagli dell'ordine</label>
+                        <input type="text" id="order" class="form-control text-muted" placeholder="Es: Campanello rotto, chiamare al telefono, ecc. ecc.">
                     </div>
                     <div class="col-12 text-center my-2 p-2">
-                        <label for="lastname" class="form-label"></label>
                         <select name="form-control" id="fork" class="p-2">
                             <option>Con posate</option>
                             <option>Senza posate</option>
@@ -90,15 +89,15 @@ export default {
                 </div>
                 <div class="row">
                     <div class="col-12 my-3">
-                        <label for="cardname" class="form-label">Numero carta</label>
-                        <input type="text" id="cardname" class="form-control">
+                        <label for="creditcard" class="form-label">Numero carta</label>
+                        <input type="text" id="creditcard" class="form-control">
                     </div>
                     <div class="col-5">
                         <label for="creditcard" class="form-label">Nome titolare</label>
                         <input type="text" id="creditcard" class="form-control">
                     </div>
                     <div class="col-4">
-                        <label for="sxpiration" class="form-label">Data scadenza</label>
+                        <label for="expiration" class="form-label">Data scadenza</label>
                         <input type="text" id="creditcard" class="form-control">
                     </div>
                     <div class="col-3">
@@ -108,7 +107,7 @@ export default {
                 </div>
                 <hr>
                 <button type="submit" class="btn btn-primary btn-block">
-                    Continua al checkout
+                    Ordina per la consegna
                 </button>
             </div>
             <div class="col-4">
