@@ -12,6 +12,20 @@ export default {
 
 <template>
 
+     <!--CONCEPT BACKGROUND HEADER,-->
+     <section class="background-header">
+        <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
+            <h1>
+                Deliveboo
+            </h1>
+            <h2>
+                Buono da far paura
+            </h2>
+
+        </div>
+    </section>
+    <!--FINE BACKGROUND HEADER-->
+
     <!--Carosello con i piatti-->
     <!--Metterci i migliori in base alle valutazioni?-->
     <div id="carouselExample" class="carousel slide">
@@ -236,4 +250,32 @@ export default {
 
 <style lang="scss" scoped>
     @import "../assets/scss/partials/homepage.scss";
+    
+.background-header{
+    background: url('/src/assets/img/cheeseburger.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+
+.background-header::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.background-header .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+.background-header h1{
+    font-size: 1.5em;
+}
+.background-header h2{
+    font-size: 1.2em;
+}
 </style>

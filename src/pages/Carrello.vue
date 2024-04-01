@@ -194,4 +194,7 @@ export default {
         background-color: #39526A;
         color: #F7CD1F;
     }
+    .container > .row{
+        margin-top: 100px;
+    }
 </style>

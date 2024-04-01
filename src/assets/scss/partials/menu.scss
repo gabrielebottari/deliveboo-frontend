@@ -1,0 +1,44 @@
+* {
+    color: #39526A;
+}
+.container-menu{
+    margin-top: 150px;
+}
+img {
+    width: 200px;
+    height: 200px;
+    box-shadow: 5px 5px 5px;
+}
+h4, h5, h6 {
+    text-shadow: 1px 1px 1px white;
+}
+h2{
+    font-weight: bold;
+}
+.card-specific > *{
+    margin-top: 10px;
+}
+.card-specific > button {
+    background-color: #39526A;
+    color: #F7CD1F;
+}
+.card-specific > button:hover {
+    background-color: #F7CD1F;
+    color: #39526A;
+    border-color: #39526A;
+}
+.info-risto{
+    margin-bottom: 70px;
+}
+.badge {
+    background-color: black;
+}
+.col-9 > .btn {
+    margin-top: 10px;
+}
+
+.mini-carrello {
+    position: absolute;
+    right: 80px;
+    top: 150px;
+}

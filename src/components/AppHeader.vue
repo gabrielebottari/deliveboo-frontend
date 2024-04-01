@@ -53,19 +53,7 @@ export default {
     <!--FINE NAVBAR-->
 
     <!--DECIDERE SE METTERE O NO-->
-    <!--CONCEPT BACKGROUND HEADER,-->
-    <section class="background-header">
-        <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
-            <h1>
-                Deliveboo
-            </h1>
-            <h2>
-                Buono da far paura
-            </h2>
-
-        </div>
-    </section>
-    <!--FINE BACKGROUND HEADER-->
+   
 </template>
 
 <style lang="scss" scoped>
