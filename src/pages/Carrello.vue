@@ -1,5 +1,7 @@
 <script>
+
 export default {
+
   data() {
     return {
       dishes: [
@@ -28,7 +30,6 @@ export default {
               quantity: 4,
               img: "",
               price: "7,00 €"
-  
           },
           ],
         };
@@ -36,15 +37,12 @@ export default {
 };
 </script>
 
-
-
-<template>
-    <main>
-        <div class="container">
-            <div class="cart">
-
+<template class="bg-secondary">
+    <main class="bg-dark">
+        <div class="container bg-primary">
+            <!--Parte sinistra in cui selezionare le cose che vuoi da mangiare-->
+            <div class="cart bg-danger text-white">
                 <!-- ciclo per visualizzare i piatti -->
-
                 <ul v-for="dish in dishes">
                     <li class="cart-item row justify-content-evenly align-content-center">
 
@@ -78,58 +76,12 @@ export default {
                         </div>
                     </li>
                 </ul>
-            </div>
+                </div>
+            <!--parte destra in cui ci sono le cose che hai selezionato-->
         </div>
     </main>
 </template>
 
-<style scoped>
-
-ul,ol
-{
-    list-style: none;
-
-    li
-    {
-        padding: 10px;
-    }
-}
-
-main .container 
-{
-    margin: 50px auto;
-    border: 1px solid grey;
-    border-radius: 15px;
-
-    .cart
-    {
-        .cart-item
-        {
-            border-bottom: 1px solid grey;
-            text-align: center;
-
-            #dish-name
-            {
-                margin-bottom: 10px;
-            }
-
-            #dish-ingredients
-            {
-                button
-                {
-                    padding: 5px 10px;
-                    border-radius: 5px;
-                    background-color: white;
-                }
-                button:hover
-                {
-                    background-color: lightpink;
-                    box-shadow: 3px 3px 5px rgb(0 0 0 / 50%);;
-                    transition-duration: 0.3s;
-                }
-            }
-        }
-    }
-}
-
+<style lang="scss" scoped>
+    @import "../assets/scss/partials/carrello.scss";
 </style>

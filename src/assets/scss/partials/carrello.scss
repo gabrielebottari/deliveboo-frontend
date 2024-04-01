@@ -1,0 +1,46 @@
+ul,ol
+{
+    list-style: none;
+
+    li
+    {
+        padding: 10px;
+    }
+}
+
+main .container 
+{
+    margin: 50px auto;
+    border: 1px solid grey;
+    border-radius: 15px;
+
+    .cart
+    {
+        .cart-item
+        {
+            border-bottom: 1px solid grey;
+            text-align: center;
+
+            #dish-name
+            {
+                margin-bottom: 10px;
+            }
+
+            #dish-ingredients
+            {
+                button
+                {
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    background-color: white;
+                }
+                button:hover
+                {
+                    background-color: lightpink;
+                    box-shadow: 3px 3px 5px rgb(0 0 0 / 50%);;
+                    transition-duration: 0.3s;
+                }
+            }
+        }
+    }
+}
