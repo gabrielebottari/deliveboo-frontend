@@ -1,39 +1,45 @@
 <script>
 
+// importazione componenti 
 import AppMyMenu from '../components/AppMyMenu.vue';
 import AppOrders from '../components/AppOrders.vue';
-import AppSingleDish from '../components/AppSingleDish.vue';
 import AppStatistics from '../components/AppStatistics.vue';
+import AppSingleDish from '../components/AppSingleDish.vue';
 
 export default {
-  data() {
-    return {
-      cards: [
-        {
-            title: "I miei Piatti",
-            img: "fa-solid fa-utensils",
-            link: "",
+    data() {
+        return {
+        cards: [
+            {
+                title: "I miei Piatti",
+                img: "fa-solid fa-utensils",
+                component: "AppMyMenu",
 
-        },
-        {
-            title: "I miei ordini",
-            img: "fa-regular fa-rectangle-list",
-            link: "",
-        },
-        {
-            title: "Le mie statistiche",
-            img: "fa-solid fa-chart-line",
-            link: "",
-        },
-      ],
-    };
-  },
-  components: {
-    AppMyMenu,
-    AppOrders,
-    AppSingleDish,
-    AppStatistics,
-  }
+            },
+            {
+                title: "I miei ordini",
+                img: "fa-regular fa-rectangle-list",
+                component: "AppOrders",
+            },
+            {
+                title: "Le mie statistiche",
+                img: "fa-solid fa-chart-line",
+                component: "AppStatistics",
+            },
+        ],
+        };
+    },
+    components: {
+        AppMyMenu,
+        AppOrders,
+        AppSingleDish,
+        AppStatistics,
+    },
+    methods: {
+        GetCardContent: function (component) {
+
+        }
+    }
 };
 </script>
 
@@ -45,7 +51,7 @@ export default {
         <div class="container">
             <div class="row">
                 <div class="col cards" v-for="card in cards">
-                    <a @click="">
+                    <a @click="$emit('Event')">
                         <div class="my-card">
                             <div class="card-img-bg">
                                 <div>
@@ -60,8 +66,10 @@ export default {
                 </div>
             </div>
         </div>
-        <div>
-            <AppMyMenu/>
+        <div class="active">
+            <div class="card-link-content">
+                <AppMyMenu/>
+            </div>
         </div>
     </main>
 </template>
@@ -151,6 +159,35 @@ main
 main.debug 
 {
     height: 800px;
+}
+
+.hidden
+{
+    display: none;
+}
+
+.active
+{
+    display: block;
+    position: fixed;
+    left: 0%;
+    bottom: 0%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba($color: #000000, $alpha: 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card-link-content
+    {
+        width: 70%;
+        height: 70%;
+        background-color: white;
+        border-radius: 20px;
+
+    }
+
 }
 
 </style>
