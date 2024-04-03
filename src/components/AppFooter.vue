@@ -87,43 +87,19 @@ export default {
                 </p>
             </div>
 
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
-                    Porta Deliveroo con te
-                </h5>
-                <button class="btn btn-primary">
-                    Scarica google
-                </button>
-                <button class="btn btn-primary">
-                    Scarica mac
-                </button>
-            </div>
-
         </div>
 
         <hr class="mb-4">
 
         <div class="row align-items-center">
 
-            <div class="col-md-7 col-lg-8">
+            <div class="col">
                 <p>
                     Copyright
                     <a href="#">
                         <strong>providers</strong>
                     </a>
                 </p>
-            </div>
-
-            <div class="col-md-5 col-lg-4">
-                <div class="text-center text-md-right">
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
-                            <a href="#" class="btn-floating btn-sm text-white">
-                                facebook
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
         </div>
