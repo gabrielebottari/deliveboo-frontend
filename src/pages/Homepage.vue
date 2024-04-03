@@ -13,7 +13,8 @@ export default {
 <template>
 
      <!--CONCEPT BACKGROUND HEADER,-->
-     <section class="background-header">
+     <div class="container-fluid">
+        <section class="background-header">
         <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
             <h1>
                 Deliveboo
@@ -24,6 +25,7 @@ export default {
 
         </div>
     </section>
+     </div>
     <!--FINE BACKGROUND HEADER-->
 
     <!--Carosello con i piatti-->
@@ -31,12 +33,12 @@ export default {
     <div id="carouselExample" class="carousel slide">
         <div class="carousel-inner">
 
-            <div class="carousel-item active">
-                <div class="card">
-                    <div class="img-wrapper">
+            <div class="carousel-item active ">
+                <div class="card background-card-carousel">
+                    <div class="img-wrapper rotondo">
                         <img src="../assets/img/cheeseburger.jpg" alt="...">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -44,11 +46,11 @@ export default {
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="card">
+                <div class="card background-card-carousel">
                     <div class="img-wrapper">
                         <img src="../assets/img/margherita-pizza.jpg" alt="...">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -56,11 +58,11 @@ export default {
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="card">
+                <div class="card background-card-carousel">
                     <div class="img-wrapper">
                         <img src="../assets/img/bbq-ribs.jpg" alt="...">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
@@ -68,11 +70,11 @@ export default {
                 </div>
             </div>
             <div class="carousel-item">
-                <div class="card">
+                <div class="card background-card-carousel">
                     <div class="img-wrapper">
                         <img src="../assets/img/french-fries.jpg" alt="...">
                     </div>
-                    <div class="card-body">
+                    <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>

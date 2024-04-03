@@ -3,7 +3,14 @@
 h1{
     color: $secondary;
 }
+
 //CAROSELLO
+
+
+.background-card-carousel{
+    background-color: $tertiary;
+    border: none;
+}
 .carousel {
     background-color: $primary;
 }
@@ -19,26 +26,37 @@ h1{
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.img-wrapper > img{
+    border-radius: 30px;
 }
 
 img{
     max-width: 100%;
     max-height: 100%;
 }
+.background-card-body{
+    border-radius: 30px;
+    padding: 50px;
+}
 @media screen and (min-width:576px){
     .carousel-inner {
         display: flex;
+        background-color: $tertiary;
     }
     .carousel-item {
         display: block;
         margin-right: 0;
         flex: 0 0 calc(100/3);
+        background-color: $tertiary;
     }
     .img-wrapper{
         height: 23vw;
+        background-color: $tertiary;
     }
 }
-
 .carousel-inner{
     padding: 1em;
 }
@@ -52,7 +70,9 @@ img{
 .card > .img-wrapper, .card-body {
     background-color: $primary;
 }
+
 //STILE SEZIONE MAPS
+/*
 h6{
     text-transform: uppercase;
 }
@@ -77,7 +97,7 @@ h6{
 .main-content{
     z-index: 22;
     width: fit-content;
-    color:$primary;
+    color: $primary;
 }
 @media (max-width:600px) {
     .map-wrapper iframe {
@@ -95,9 +115,12 @@ h6{
     color: $primary;
     border-color: $primary;
 }
-//categorie
+*/
+
+//CATEGORIE
+
 .categories-container {
-    background-color: $primary;
+    background-color: #D2BC9D;
 }
 .card-img-top {
     border-radius: 50px;
@@ -128,6 +151,8 @@ h6{
     background-color: $secondary;
     color: $primary;
 }
+
+// SECTION HERO
 .background-header{
     background: url('/src/assets/img/cheeseburger.jpg') no-repeat center;
     background-size: cover;

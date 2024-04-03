@@ -19,7 +19,7 @@ export default {
 
         <div class="row text-center text-md-left">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                <h5 class="text-uppercase mb-4 font-weight-bold">
                     Scopri Deliveboo
                 </h5>
                 <p>
@@ -52,7 +52,7 @@ export default {
             </div>
 
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                <h5 class="text-uppercase mb-4 font-weight-bold">
                     note legali
                 </h5>
                 <p>
@@ -62,7 +62,7 @@ export default {
                     <a href="#">Informativa sulla privacy</a>
                 </p>
                 <p>
-                    <a href="#">cookies</a>
+                    <a href="#">Cookies</a>
                 </p>
                 <p>
                     <a href="#">Classificazione dei partner</a>
@@ -73,7 +73,7 @@ export default {
             </div>
 
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                <h5 class="text-uppercase mb-4 font-weight-bold">
                     Aiuto
                 </h5>
                 <p>
@@ -88,13 +88,13 @@ export default {
             </div>
 
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">
+                <h5 class="text-uppercase mb-4 font-weight-bold">
                     Porta Deliveroo con te
                 </h5>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary btn-footer">
                     Scarica google
                 </button>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary btn-footer">
                     Scarica mac
                 </button>
             </div>

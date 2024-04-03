@@ -11,8 +11,19 @@ a {
     text-decoration: none;
 }
 a:hover {
-    text-decoration: underline solid;
+    text-decoration: underline solid 3px;
     text-decoration-color: $primary;
     line-height: 1.5;
-    
+}
+h5{
+   color: $secondary;
+}
+.btn-footer{
+    background-color: $secondary;
+    color: $primary;
+    margin-top: 10px;
+    font-weight: bold;
+}
+.btn-footer:hover{
+    color: $secondary;
 }
