@@ -156,7 +156,7 @@ export default {
 
             <div class="col">
                 <div class="card categories-card">
-                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <img src="../assets/img/cheeseburger.jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h3 class="card-title">Cinese</h3>
                         <p class="card-text">
@@ -171,7 +171,7 @@ export default {
 
             <div class="col">
                 <div class="card categories-card">
-                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <img src="../assets/img/cheeseburger.jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h3 class="card-title">Cinese</h3>
                         <p class="card-text">
@@ -186,7 +186,7 @@ export default {
 
             <div class="col">
                 <div class="card categories-card">
-                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
+                    <img src="../assets/img/cheeseburger.jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h3 class="card-title">Cinese</h3>
                         <p class="card-text">

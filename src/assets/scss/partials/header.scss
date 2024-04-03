@@ -12,7 +12,6 @@
 .offcanvas-body, .offcanvas-header{
     background-color: $primary;
 }
-
 .navbar-brand{
     font-weight: 500;
     color: $secondary;
@@ -23,6 +22,7 @@
     background-color: $secondary;
     color: $primary;
     font-size: 14px;
+    font-weight: bold;
     padding: 8px 20px;
     border-radius: 50px;
     text-decoration: none;
