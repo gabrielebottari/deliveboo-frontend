@@ -1,14 +1,18 @@
+// IMPORTAZIONE VARIABILI
+@import "./variables.scss";
+
+
 * {
     text-decoration: hidden;
 }
 a {
     //background-color: #39526A;
-    color: #F7CD1F;
+    color: $primary;
     text-decoration: none;
 }
 a:hover {
     text-decoration: underline solid;
-    text-decoration-color:#F7CD1F;
+    text-decoration-color: $primary;
     line-height: 1.5;
     
 }

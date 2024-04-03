@@ -1,5 +1,8 @@
+// IMPORTAZIONE VARIABILI
+@import "./variables.scss";
+
 .navbar {
-    background-color: #F7CD1F;
+    background-color: $primary;
     height: 80px;
     margin: 20px;
     border-radius: 16px;
@@ -7,18 +10,18 @@
 }
 
 .offcanvas-body, .offcanvas-header{
-    background-color: #F7CD1F;
+    background-color: $primary;
 }
 
 .navbar-brand{
     font-weight: 500;
-    color: #161f28;
+    color: $secondary;
     font-size: 24px;
     transition: 0.3s color;
 }
 .login-button {
-    background-color: #39526A;
-    color: #F7CD1F;
+    background-color: $secondary;
+    color: $primary;
     font-size: 14px;
     padding: 8px 20px;
     border-radius: 50px;
@@ -27,7 +30,8 @@
 }
 
 .login-button:hover {
-    background-color: #161f28;
+    background-color: $primary;
+    color: $secondary ;
 }
 
 .navbar-toggler {
@@ -41,13 +45,13 @@
 }
 
 .nav-link {
-    color: #39526A;
+    color: $secondary;
     font-weight: 500;
     position: relative;
 }
 
 .nav-link:hover, .nav-link.active {
-    color: #161f28;
+    color: $secondary;
 }
 
 @media (min-width: 991px) {
@@ -60,7 +64,7 @@
         transform: translateX(-50%);
         width: 0;
         height: 2px;
-        background-color: #F7CD1F;
+        background-color: $primary;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }

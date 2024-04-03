@@ -1,9 +1,11 @@
+@import "./variables.scss";
+
 //CAROSELLO
 .carousel {
-    background-color: #F7CD1F;
+    background-color: $primary;
 }
 .carousel-item{
-    background-color: #39526A;
+    background-color: $secondary;
 }
 .img-wrapper{
     max-width: 100%;
@@ -38,11 +40,11 @@ img{
     margin: 0.5em;
 }
 .card-map{
-    background-color: #39526A;
-    color: #F7CD1F;
+    background-color: $secondary;
+    color: $primary;
 }
 .card > .img-wrapper, .card-body {
-    background-color: #F7CD1F;
+    background-color: $primary;
 }
 //STILE SEZIONE MAPS
 h6{
@@ -89,7 +91,7 @@ h6{
 }
 //categorie
 .categories-container {
-    background-color: #F7CD1F;
+    background-color: $primary;
 }
 .card-img-top {
     border-radius: 50px;
@@ -98,29 +100,54 @@ h6{
 .categories-card {
     border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    background-color: #39526A;
-    color: #F7CD1F;
+    background-color: $secondary;
+    color: $primary;
 }
 .categories-card > .card-body {
     padding: 25px;
     margin-top: -15px;
-    background-color: #39526A;
-    color: #F7CD1F;
+    background-color: $secondary;
+    color: $primary;
 }
 .categories-card > .card-body > * {
-    background-color: #39526A;
+    background-color: $secondary;
 }
 .categories-card > .d-flex > a {
     border-radius: 50px;
     width: 120px;
-    color: #39526A;
-    background-color: #F7CD1F;
+    color: $secondary;
+    background-color: $primary;
 }
 .categories-card > .d-flex > a:hover {
-    background-color: #39526A;
-    color: #F7CD1F;
+    background-color: $secondary;
+    color: $primary;
 }
-.contenitore-maria-pia {
-    color: fuchsia;
-    background-color: black;
+.background-header{
+    background: url('/src/assets/img/cheeseburger.jpg') no-repeat center;
+    background-size: cover;
+    width: 100%;
+}
+
+.background-header::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.background-header .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
+}
+.background-header h1{
+    font-size: 1.5em;
+    color: $primary;
+}
+.background-header h2{
+    font-size: 1.2em;
+    color: $primary;
 }

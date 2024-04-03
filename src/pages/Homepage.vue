@@ -92,6 +92,7 @@ export default {
    <!--Fine Carosello-->
 
     <!--Parte dell'homepage che conterrà le mappe oppure un consiglio di ristoranti-->
+    <!--
     <section class="section-map">
         
         <div class="container container-section-map">
@@ -142,6 +143,7 @@ export default {
         </div>
 
     </section>
+    -->
    
    <!--parte dell'homepage che contiene LE CATEGORIE-->
    <div class="categories-container">
@@ -250,32 +252,5 @@ export default {
 
 <style lang="scss" scoped>
     @import "../assets/scss/partials/homepage.scss";
-    
-.background-header{
-    background: url('/src/assets/img/cheeseburger.jpg') no-repeat center;
-    background-size: cover;
-    width: 100%;
-}
-
-.background-header::before {
-    background-color: rgba(0, 0, 0, 0.6);
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.background-header .container {
-    height: 100vh;
-    z-index: 1;
-    position: relative;
-}
-.background-header h1{
-    font-size: 1.5em;
-}
-.background-header h2{
-    font-size: 1.2em;
-}
+    @import "../assets/scss/partials/variables.scss";
 </style>
