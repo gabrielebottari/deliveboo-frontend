@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from './pages/Homepage.vue';
-import Dashboard from './pages/Dashboard.vue';
 import Carrello from './pages/Carrello.vue';
 import Menu from './Menu.vue';
 import NotFound from './pages/NotFound.vue';
