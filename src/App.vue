@@ -36,7 +36,8 @@ export default {
 <style lang="scss">
 @use "assets/scss/main" as *;
 @import "assets/scss/partials/reset";
+@import "assets/scss/partials/variables.scss";
 .container-app{
-    background-color: #F7CD1F;
+    background-color: $tertiary;
 }
 </style>

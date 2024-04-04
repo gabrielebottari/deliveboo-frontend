@@ -12,6 +12,9 @@
 .offcanvas-body, .offcanvas-header{
     background-color: $primary;
 }
+.offcanvas-body > ul > li > a:hover {
+    color: white;
+}
 .navbar-brand{
     font-weight: 500;
     color: $secondary;

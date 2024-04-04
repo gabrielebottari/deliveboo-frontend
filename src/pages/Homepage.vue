@@ -12,7 +12,7 @@ export default {
 
 <template>
 
-     <!--CONCEPT BACKGROUND HEADER,-->
+     <!--SECTION HERO-->
      <div class="container-fluid">
         <section class="background-header">
         <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
@@ -26,12 +26,87 @@ export default {
         </div>
     </section>
      </div>
-    <!--FINE BACKGROUND HEADER-->
+    <!--FINE SECTION HERO-->
 
-    <!--Carosello con i piatti-->
-    <!--Metterci i migliori in base alle valutazioni?-->
+    <!--parte dell'homepage che contiene LE CATEGORIE-->
+    <div class="categories-container">
+        <div class="container">
+            <h1 class="text-center text-black">
+                Migliori categorie
+            </h1>
+
+            <div class="row row-cols-sm-3 row-cols-md-3 row-cols-lg-6 row-cols-xl-12 text-center">
+                
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-categories px-3 py-2 col">
+                        Cinese
+                    </button>
+                </div>
+                
+
+            </div>
+    </div>
+   </div>
+
+    <!--CAROSELLO CON PIATTI CONSIGLIATI-->
+
     <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
+        <div class="carousel-inner text-center">
 
             <div class="carousel-item active ">
                 <div class="card background-card-carousel">
@@ -41,7 +116,7 @@ export default {
                     <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn">Vai al piatto</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +128,7 @@ export default {
                     <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn">Vai al piatto</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +140,7 @@ export default {
                     <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn">Vai al piatto</a>
                     </div>
                 </div>
             </div>
@@ -77,19 +152,17 @@ export default {
                     <div class="card-body my-3 background-card-body">
                         <h5 class="card-title">Card title</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn">Vai al piatto</a>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="custom-icon" aria-hidden="true"><i class="fa-solid fa-greater-than fa-rotate-180"></i></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="custom-icon" aria-hidden="true"><i class="fa-solid fa-greater-than"></i></span>
+            </button>
     </div>
    <!--Fine Carosello-->
 
@@ -147,108 +220,7 @@ export default {
     </section>
     -->
    
-   <!--parte dell'homepage che contiene LE CATEGORIE-->
-   <div class="categories-container">
-    <div class="container py-5">
-        <h1 class="text-center">
-            Migliori categorie
-        </h1>
-
-        <div class="row row-cols-1 row-cols-md-3 g-4 py-5">
-
-            <div class="col">
-                <div class="card categories-card">
-                    <img src="../assets/img/cheeseburger.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Cinese</h3>
-                        <p class="card-text">
-                            I migliori ristoranti cinesi
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-around mb-5">
-                        <a href="#" class="btn">Vai alla pagina</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card categories-card">
-                    <img src="../assets/img/cheeseburger.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Cinese</h3>
-                        <p class="card-text">
-                            I migliori ristoranti cinesi
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-around mb-5">
-                        <a href="#" class="btn">Vai alla pagina</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card categories-card">
-                    <img src="../assets/img/cheeseburger.jpg" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Cinese</h3>
-                        <p class="card-text">
-                            I migliori ristoranti cinesi
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-around mb-5">
-                        <a href="#" class="btn">Vai alla pagina</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card categories-card">
-                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Cinese</h3>
-                        <p class="card-text">
-                            I migliori ristoranti cinesi
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-around mb-5">
-                        <a href="#" class="btn">Vai alla pagina</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card categories-card">
-                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Cinese</h3>
-                        <p class="card-text">
-                            I migliori ristoranti cinesi
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-around mb-5">
-                        <a href="#" class="btn">Vai alla pagina</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card categories-card">
-                    <img src="../assets/img/deliveboo.png" class="card-img-top" alt="...">
-                    <div class="card-body text-center">
-                        <h3 class="card-title">Cinese</h3>
-                        <p class="card-text">
-                            I migliori ristoranti cinesi
-                        </p>
-                    </div>
-                    <div class="d-flex justify-content-around mb-5">
-                        <a href="#" class="btn">Vai alla pagina</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-   </div>
-   </div>
+   
 
 </template>
 
