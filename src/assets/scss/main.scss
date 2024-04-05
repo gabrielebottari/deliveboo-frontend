@@ -3,3 +3,28 @@
 
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
+/*
+    FLOATING BUTTON
+*/
+.btn-cart{
+  position: fixed;
+    bottom: 40px;
+    right: 60px; 
+    z-index: 3;
+    background-color: $secondary;
+    
+    padding: 15px;
+    color: $primary;
+    font-size: 60px;
+}
+.btn-cart:hover{
+
+}
+.offcanvas{
+  
+}
+.offcanvas-body{
+  background-image: url(../img/undraw_shopping_app_flsj.png);
+  background-position: center;
+  background-size: cover;
+}

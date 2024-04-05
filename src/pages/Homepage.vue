@@ -11,6 +11,7 @@ export default {
 
 
 <template>
+    
 
      <!--SECTION HERO-->
      <div class="container-fluid">
@@ -219,9 +220,6 @@ export default {
 
     </section>
     -->
-   
-   
-
 </template>
 
 <style lang="scss" scoped>

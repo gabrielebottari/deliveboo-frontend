@@ -11,7 +11,30 @@
     <title>prova</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+     
+    </div>
+     <!--FLOATING BUTTON-->
+      <button class="btn-cart" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+        <i class="fa-solid fa-cart-shopping"></i>
+      </button>
+      
+      <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="staticBackdropLabel">Carrello</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <p>
+              Qui ci saranno tutti gli ordini
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!--END FLOATING BUTTON-->
+    
     <script type="module" src="/src/main.js"></script>
 
      <!--script di j.quary !!PROVA!!-->
