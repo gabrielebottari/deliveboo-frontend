@@ -86,17 +86,3 @@ h2{
     SE NON LA FAI RICORDA DI CANCELLARE LE CLASSI
 */
 //premi bottone per scorrere i paitti
-.bottone-prova{
-}
-.active{
-    display: block;
-}
-.nascosta{
-    display: none;
-}
-.active input:checked ~ .nascosta{
-    display: block;
-}
-.active input:checked ~ .active{
-    display: none;
-}

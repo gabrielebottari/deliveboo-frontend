@@ -11,7 +11,7 @@ export default {
             <!--INFORMAZIONI RISTORANTE-->
             <div class="row info-risto first-page">
                 <div class="col-4">
-                    <img src="./assets/img/esempio-img-progetto.jpg" alt="">
+                    <img src="./assets/img/esempio-img-progetto.jpg" alt="#" style="width: 400px;">
                 </div>
                 <div class="col-8 btn-info-restaurant">
                     <h2 class="text-left">
@@ -117,35 +117,23 @@ export default {
             <!--fine navbar-->
 
             <!--I VARI PIATTI E AGGIUNGERLI-->
-            <div class="row third-page">
+            <h3 class="my-5 text-center">
+                I nostri Primi piatti
+            </h3>
+            <p class="my-5 text-center" style="font-size: 70px;">
+                io scorrerò finiti i primi e passerò ai secondi, ai contorni....
+            </p>
+            <div class="row">
                 <div class="col-lg-3 col-md-4 col-sm-1 text-center">
-                    <div class="card mb-3 active" style="width: 800px;  height: 400px; background-color: black;">
+                    <div class="card mb-3">
                         <div class="row g-0">
                             <div class="col-md-4">
-                                <img src="../src/assets/img/deliveboo.png" class="img-fluid rounded-start" alt="...">
+                                <img src="../src/assets/img/margherita-pizza.jpg" style="width: 600px;  height: 400px;" class="rounded-start" alt="...">
                             </div>
                             <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                        </div>  
-                    </div>
-                    <button class="bottone-prova" onclick="toggleDiv()">
-                        ciaso
-                    </button>
-                    <div class="card mb-3 nascosta" style="width: 800px;  height: 400px; background-color: black;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="../src/assets/img/bbq-ribs.jpg" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                                <div class="card-body bg-white">
+                                    <h5 class="card-title">Primo piatto</h5>
+                                    <p class="card-text text-black">Primo piatto1, primo piatto 2. Finiti, scorre sui secondi, ecc. ecc.</p>
                                 </div>
                             </div>
                         </div>  
