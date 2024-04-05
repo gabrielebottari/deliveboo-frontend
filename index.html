@@ -19,16 +19,50 @@
         <i class="fa-solid fa-cart-shopping"></i>
       </button>
       
+      <!--Carrello Temporaneo-->
       <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="staticBackdropLabel">Carrello</h5>
+          <h3 class="offcanvas-title" id="staticBackdropLabel">CARRELLO</h3>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
-          <div>
-            <p>
-              Qui ci saranno tutti gli ordini
-            </p>
+        <div class="offcanvas-body" style="background-image: url(./src/assets/img/undraw_shopping_app_flsj.png); 
+                                          background-size: contain;
+                                          background-position: center;
+                                          background-repeat: no-repeat;">
+              <button class="btn btn-danger d-flex">
+                ELIMINA
+              </button>
+              <div class="justify-content-between d-flex my-5">
+                <span>
+                  PIATTO NUMERO 1
+                </span>
+                <span>
+                  500 EURO
+                </span>
+              </div>
+              <div class="justify-content-between d-flex my-5">
+                <span>
+                  PIATTO NUMERO 2
+                </span>
+                <span>
+                  500 EURO
+                </span>
+              </div>
+              <div class="justify-content-between d-flex my-5">
+                <span>
+                  PIATTO NUMERO 3
+                </span>
+                <span>
+                  500 EURO
+                </span>
+              </div>
+              <button class="btn btn-primary text-white d-flex">
+                vai al pagamento
+              </button>
+              
+
+              
+
           </div>
         </div>
       </div>

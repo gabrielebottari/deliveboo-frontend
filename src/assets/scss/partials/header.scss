@@ -40,6 +40,8 @@
 .navbar-toggler {
     border: none;
     font-size: 1.25rem;
+    background-color: $secondary;
+    margin-left: 10px;
 }
 
 .navbar-toggler:focus, .btn-close:focus{
