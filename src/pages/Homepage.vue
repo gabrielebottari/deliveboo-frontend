@@ -1,14 +1,33 @@
 <script>
+import axios from 'axios';
 
 export default {
-    data() {
-        return {
-
-        };
+  name: 'RestaurantTypes',
+  data() {
+    return {
+      restaurantTypes: [],
+    };
+  },
+  mounted() {
+    this.fetchRestaurantTypes();
+  },
+  methods: {
+    fetchRestaurantTypes() {
+      axios.get('http://127.0.0.1:8000/api/types')
+        .then(response => {
+          this.restaurantTypes = response.data.results;
+        })
+        .catch(error => console.error("There was an error fetching the restaurant types:", error));
+    },
+    // Aggiungi questo metodo per costruire l'URL dell'icona
+    getIconUrl(type) {
+        const url = `${type.icon}`;
+        console.log(url); // Aggiungi questo per debug
+        return url;
     }
-}
+  }
+};
 </script>
-
 
 <template>
 
@@ -31,9 +50,16 @@ export default {
     <!--parte dell'homepage che contiene LE CATEGORIE-->
     <div class="categories-container">
         <div class="container">
-            <h1 class="text-center text-black">
-                Migliori categorie
-            </h1>
+
+            <div class="categories-container">
+                <div class="container">
+                    <h1 class="text-center text-black">Migliori categorie</h1>
+                    <div v-for="type in restaurantTypes" :key="type.id" class="restaurant-type-card">
+                        <img :src="getIconUrl(type)" :alt="type.name" class="type-icon">
+                        <h3>{{ type.name }}</h3>
+                    </div>
+                </div>
+            </div>
 
             <div class="row row-cols-sm-3 row-cols-md-3 row-cols-lg-6 row-cols-xl-12 text-center">
                 
