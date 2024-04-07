@@ -2,30 +2,19 @@
 import axios from 'axios';
 
 export default {
-  name: 'RestaurantTypes',
   data() {
     return {
-      restaurantTypes: [],
+      restaurants: [],
     };
   },
   mounted() {
-    this.fetchRestaurantTypes();
+    axios
+        .get('http://127.0.0.1:8000/api/restaurants')
+        .then(res=>{
+            this.restaurants=res.data.results.data;
+            console.log(this.restaurants)
+        });
   },
-  methods: {
-    fetchRestaurantTypes() {
-      axios.get('http://127.0.0.1:8000/api/types')
-        .then(response => {
-          this.restaurantTypes = response.data.results;
-        })
-        .catch(error => console.error("There was an error fetching the restaurant types:", error));
-    },
-    // Aggiungi questo metodo per costruire l'URL dell'icona
-    getIconUrl(type) {
-        const url = `${type.icon}`;
-        console.log(url); // Aggiungi questo per debug
-        return url;
-    }
-  }
 };
 </script>
 
@@ -55,79 +44,23 @@ export default {
             <div class="categories-container">
                 <div class="container">
                     <h1 class="text-center text-black">Migliori categorie</h1>
-                    <div v-for="type in restaurantTypes" :key="type.id" class="restaurant-type-card">
-                        <img :src="getIconUrl(type)" :alt="type.name" class="type-icon">
-                        <h3>{{ type.name }}</h3>
+                    <div class="restaurant-type-card">
+                        <img src="/src/assets/img/cheeseburger.jpg" class="type-icon">
+                        <h3>
+                            {{ restaurants[6].activity_name }}
+                        </h3>
                     </div>
                 </div>
             </div>
 
-            <div class="row row-cols-sm-3 row-cols-md-3 row-cols-lg-6 row-cols-xl-12 text-center">
-                
+            <div class="row row-cols-sm-3 row-cols-md-3 row-cols-lg-6 row-cols-xl-12 text-center bg-danger">
                 <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
+                  <button class="btn btn-categories px-3 py-2 col">
                         Cinese
                     </button>
                 </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                <div class="col">
-                    <button class="btn btn-categories px-3 py-2 col">
-                        Cinese
-                    </button>
-                </div>
-                
-
             </div>
-    </div>
+        </div>
    </div>
 
     <!--CAROSELLO CON PIATTI CONSIGLIATI-->
