@@ -105,25 +105,13 @@ export default {
 
         <div class="row align-items-center">
 
-            <div class="col-md-7 col-lg-8">
+            <div class="col">
                 <p>
                     Copyright
                     <a href="#">
                         <strong>providers</strong>
                     </a>
                 </p>
-            </div>
-
-            <div class="col-md-5 col-lg-4">
-                <div class="text-center text-md-right">
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
-                            <a href="#" class="btn-floating btn-sm text-white">
-                                facebook
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
 
         </div>

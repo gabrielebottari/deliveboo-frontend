@@ -14,9 +14,9 @@ export default {
 
 <template>
     <!--NAVBAR-->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand me-auto" href="#">Logo</a>
+            <a class="navbar-brand" href="#">Logo</a>
             
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
