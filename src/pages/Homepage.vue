@@ -1,20 +1,39 @@
 <script>
 import axios from 'axios';
 
+import { store } from '../store'
+
+
 export default {
   data() {
     return {
-      restaurants: [],
+        store,
+        restourants: []
     };
   },
-  mounted() {
+  created () {
     axios
-        .get('http://127.0.0.1:8000/api/restaurants')
-        .then(res=>{
-            this.restaurants=res.data.results.data;
-            console.log(this.restaurants)
+        .get(this.store.restourantsUrl)
+        .then((response) => {
+            // console.log("")
+            // console.log("dalla homepage")
+            // console.log(response.data.results.data)
+
+            this.restourants = response.data.results.data
+            // console.log(this.restourants)
+
         });
-  },
+
+    axios
+        .get(this.store.types)
+        .then((response) => {
+            console.log("chiamata ai tipi")
+            
+            this.types = response.results
+            
+
+        })
+  }
 };
 </script>
 
@@ -46,9 +65,6 @@ export default {
                     <h1 class="text-center text-black">Migliori categorie</h1>
                     <div class="restaurant-type-card">
                         <img src="/src/assets/img/cheeseburger.jpg" class="type-icon">
-                        <h3>
-                            restaurants
-                        </h3>
                     </div>
                 </div>
             </div>
@@ -63,68 +79,32 @@ export default {
         </div>
    </div>
 
-    <!--CAROSELLO CON PIATTI CONSIGLIATI-->
+    <!--CARD CON PIATTI CONSIGLIATI-->
 
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner text-center">
+    <section class="cards">
+        <div class="row p-4">
+            <div class="my-card p-2 col-3" v-for="(restourant, i) in restourants">
+                <div v-if="i < 4">
+                    <a href="">
 
-            <div class="carousel-item active ">
-                <div class="card background-card-carousel">
-                    <div class="img-wrapper rotondo">
-                        <img src="../assets/img/cheeseburger.jpg" alt="...">
-                    </div>
-                    <div class="card-body my-3 background-card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn">Vai al piatto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card background-card-carousel">
-                    <div class="img-wrapper">
-                        <img src="../assets/img/margherita-pizza.jpg" alt="...">
-                    </div>
-                    <div class="card-body my-3 background-card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn">Vai al piatto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card background-card-carousel">
-                    <div class="img-wrapper">
-                        <img src="../assets/img/bbq-ribs.jpg" alt="...">
-                    </div>
-                    <div class="card-body my-3 background-card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn">Vai al piatto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="card background-card-carousel">
-                    <div class="img-wrapper">
-                        <img src="../assets/img/french-fries.jpg" alt="...">
-                    </div>
-                    <div class="card-body my-3 background-card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn">Vai al piatto</a>
-                    </div>
+                        <div class="card-img" >
+                            <img :src="this.restourants[i].image" alt="img ristorante">
+                        </div>
+                        <div class="my-card-body">
+                            <div class="my-card-title p-2">
+                                <h5>{{ this.restourants[i].activity_name }}</h5>
+                            </div>
+                            <div class="my-card-description p-3">
+                                <p>{{ this.restourants[i].description }}</p>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="custom-icon" aria-hidden="true"><i class="fa-solid fa-greater-than fa-rotate-180"></i></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="custom-icon" aria-hidden="true"><i class="fa-solid fa-greater-than"></i></span>
-            </button>
-    </div>
-   <!--Fine Carosello-->
+    </section>
+
+   <!--Fine Card-->
 
     <!--Parte dell'homepage che conterrà le mappe oppure un consiglio di ristoranti-->
     <!--
@@ -184,4 +164,30 @@ export default {
 <style lang="scss" scoped>
     @import "../assets/scss/partials/homepage.scss";
     @import "../assets/scss/partials/variables.scss";
+
+
+    .cards
+    {
+        background-color: $secondary;
+
+
+        .row{
+            width: 85%;
+            margin: 0 auto;
+            
+            .my-card
+            {
+                color: $primary;
+                border: 1px solid black;
+
+                a
+                {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+
+    
 </style>
