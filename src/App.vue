@@ -3,10 +3,15 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 
+import axios from 'axios';
+import { store } from './store'
+
+
 export default {
     data() {
         return {
-
+            store,
+            restourants:[]
         };
     },
     components: {
@@ -15,7 +20,17 @@ export default {
         AppFooter
     },  
     methods: {
+    },
+    created () {
+        axios
+            .get(this.store.baseUrl)
+            // .get('http://127.0.0.1:8000/api/restaurants')
+            .then((response) => {
+                // console.log(response.data.results.data);
+                this.restourants = response.data.results.data;
+                console.log(this.restourants[1].activity_name)
 
+        });
     }
 }
 </script>

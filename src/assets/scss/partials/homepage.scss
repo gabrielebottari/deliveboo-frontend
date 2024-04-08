@@ -4,90 +4,42 @@ h1{
     color: $secondary;
 }
 
-img{
+
+// SECTION HERO
+
+
+.background-header{
+    background: url('/src/assets/img/cheeseburger.jpg') no-repeat center;
+    background-size: cover;
     width: 100%;
-}
-@media screen and (min-width:576px){
-    .carousel-inner {
-        display: flex;
-    }
-    .carousel-item {
-        display: block;
-        margin-right: 0;
-        flex: 0 0 calc(100/3);
-    }
-    .img-wrapper{
-        height: 23vw;
-    }
+    background-color: $tertiary;
 }
 
-
-.card-container
-{
-    display: flex;
-    justify-content: space-evenly;
-    background-color: #ffefd5;
+.background-header::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.card
-{
-    width: calc(90% / 5);
-    // margin: 1rem;
-    border: none;
-    background-color: $primary;
-    border-radius: 20px;
+.background-header .container {
+    height: 100vh;
+    z-index: 1;
+    position: relative;
 }
-
-.card img
-{
-    width: 100%;
-    border-radius: 10px;
-}
-
-.card-body
-{
+.background-header h1{
+    font-size: 1.5em;
     color: $secondary;
-    background-color: $primary;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
 }
-
-
-
-
-// CATEGORIES
-
-.categories
-{
-    display: flex;
-    background-color: $secondary;
-    text-align: center;
-    padding-left: 10px;
-    padding-right: 10px;
-
-}
-
-.categories a
-{
-    text-decoration: none;
-    color: $primary;
-    padding: 10px 20px;
-    border-radius: 20px;
-    border: 2px solid $primary;
-}
-
-
-.categories a:hover
-{
+.background-header h2{
+    font-size: 1.2em;
     color: $secondary;
-    border: 2px solid $primary; 
-    background-color: $primary; 
 }
-
-
-
-
-//STILE SEZIONE MAPS
+//STILE SEZIONE MAPS//
+/*
 h6{
     text-transform: uppercase;
 }
@@ -231,11 +183,13 @@ img{
 .card > .img-wrapper, .card-body {
     background-color: $primary;
 }
-
-.background-header .container {
-    height: 100vh;
-    z-index: 1;
-    position: relative;
+.carousel-control-prev > *{
+    background-color: $tertiary;
+    border-radius: 50px;
+}
+.carousel-control-next > *{
+    background-color: $tertiary;
+    border-radius: 50px;
 }
 .custom-icon {
     color: $primary;
