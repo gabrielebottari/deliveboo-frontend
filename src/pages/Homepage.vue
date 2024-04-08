@@ -47,8 +47,7 @@ export default {
                     <div class="restaurant-type-card">
                         <img src="/src/assets/img/cheeseburger.jpg" class="type-icon">
                         <h3>
-                            {{ restaurants[6].activity_name }}
-                            <!--PROVA-->
+                            restaurants
                         </h3>
                     </div>
                 </div>

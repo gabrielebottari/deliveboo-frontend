@@ -1,200 +1,237 @@
 <script>
+import { counter } from '@fortawesome/fontawesome-svg-core';
+import axios from 'axios';
 
 export default {
 
   data() {
     return {
-      dishes: [
-          {
-              name: "pollo al curry",
-              quantity: 1,
-              img: "",
-              price: "10,00 €"
-          },
-          {
-              name: "polenta e funghi",
-              quantity: 3,
-              img: "",
-              price: "9,00 €"
-  
-          },
-          {
-              name: "Carbonara",
-              quantity: 5,
-              img: "",
-              price: "8,00 €"
-  
-          },
-          {
-              name: "Cesar salad",
-              quantity: 4,
-              img: "",
-              price: "7,00 €"
-          },
-          ],
+    counter: 0,
+    piatti: [{
+        nome: "Carbonara",
+        descrizione: "Pasta con le uova e guanciale, aggiunta pepe nero",
+        prezzo: "£15"
+                },
+                {
+        nome: "Amatriciana",
+        descrizione: "Pasta sugo",
+        prezzo: "£20"
+                },
+                {
+        nome: "Crudo di pesce",
+        descrizione: "Pesce crudo",
+        prezzo: "£25"
+                },
+                {
+        nome: "Tagliata di manzo",
+        descrizione: "Tagliata di manzo",
+        prezzo: "£35"
+                },
+            ],
+            indicePiattoCorrente: 0
         };
+  },
+  methods: {
+    //metti metodi
+    add() {
+        const piattoCorrente = this.piatti[this.indicePiattoCorrente];
+      
+        /*
+            LI
+        */
+        const newLi = document.createElement('li');
+        newLi.classList.add('plates-list-item');
+        newLi.classList.add('m-4');
+
+        /*
+            DIV CONTENENTE NOME E PREZZO
+        */
+        const newDivNamePrice = document.createElement('div');
+        newDivNamePrice.classList.add(
+                                    'plates-name-price', 
+                                    'd-flex',
+                                    'justify-content-between'
+                                     );
+
+        newLi.appendChild(newDivNamePrice);
+
+            /*
+                I DUE SPAN
+            */
+            const h5Nome = document.createElement('h5');
+            h5Nome.textContent = piattoCorrente.nome;
+
+            const spanPrezzo = document.createElement('span');
+            spanPrezzo.textContent = piattoCorrente.prezzo;
+
+            newDivNamePrice.appendChild(h5Nome);
+            newDivNamePrice.appendChild(spanPrezzo);
+
+        /*
+            DIV CON LA DESCRIZIONE
+        */
+        const newDivDescription = document.createElement('div');
+        newDivDescription.classList.add(
+                                        'plate-description',
+                                        'm-2',
+                                        'text-start'
+                                    );
+
+        newLi.appendChild(newDivDescription);
+
+        const spanDescription = document.createElement('span');
+        spanDescription.textContent = piattoCorrente.descrizione;
+        newDivDescription.appendChild(spanDescription);
+
+        /*
+            BOTTONE REMOVE
+        */
+        const removeButton = document.createElement('button');
+        removeButton.classList.add('px-3');
+        removeButton.style.cssText  = 'background-color: rgba(245, 245, 245, 0.151); color: black;';
+        removeButton.textContent = '-';
+        removeButton.addEventListener('click', () => {
+            newLi.remove();
+            this.DecrementaNumeroPiatti()
+        });
+        newLi.appendChild(removeButton);
+
+        document.getElementById("plates-list").appendChild(newLi);
+
+    },
+    AumentaNumeroPiatti(){
+        this.counter++;
+        document.getElementById("piatti-presenti").innerText = `${this.counter}.`;
+    },
+    DecrementaNumeroPiatti(){
+        this.counter--;
+    }
+  },
+  mounted() {
+    axios
+        .get('http://127.0.0.1:8000/api/restaurants')
+        .then(res=>{
+            this.restaurants=res.data.results.data;
+            console.log(this.restaurants)
+        });
   },
 };
 </script>
 
 <template>
-    <div class="container p-4">
-        <div class="row">
-            <div class="col-8">
-                <small class="text-muted">Procedere</small>
-                <h4>
-                    Indirizzo di pagamento
-                </h4>
-                <div class="row">
-                    <div class="col-6 my-2">
-                        <label for="firstname" class="my-2">Nome</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-6 my-2">
-                        <label for="lastname" class="my-2">Cognome</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="col-12 my-2">
-                        <label for="email" class="my-2">Email</label>
-                        <div class="input-group">
-                            <span class="input-group-text">
-                                @
-                            </span>
-                            <input type="text" class="form-control" id="username">
+    <!---->
+   <div class="container-checkout" id="app">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-7">
+                    <h2 style="font-weight: bold;">
+                        INDIRIZZO DI PAGAMENTO
+                    </h2>
+                    <div class="row">
+                        <div class="col-6 my-2">
+                            <label for="firstname" class="my-2">
+                                <h6>
+                                    Nome
+                                </h6>
+                            </label>
+                            <input type="text" class="form-control">
                         </div>
+                        <div class="col-6 my-2">
+                            <label for="lastname" class="my-2">
+                                <h6>
+                                    Cognome
+                                </h6>
+                            </label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-12 my-2">
+                            <label for="email" class="my-2">
+                                <h6>
+                                    Email
+                                </h6>
+                            </label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    @
+                                </span>
+                                <input type="text" class="form-control" id="username">
+                            </div>
+                        </div>
+                        <div class="col-12 my-2">
+                            <label for="order" class="form-label">
+                                <h6>
+                                    Dettagli dell'ordine
+                                </h6>
+                            </label>
+                            <input type="text" id="order" class="form-control text-muted" placeholder="Es: Campanello rotto, chiamare al telefono, ecc. ecc.">
+                        </div>
+                        <div class="col-12 text-center my-2 p-2">
+                            <select name="form-control" id="fork" class="p-2 silverware">
+                                <option>Con posate</option>
+                                <option>Senza posate</option>
+                            </select>
+                        </div>
+                        
                     </div>
-                    <div class="col-12 my-2">
-                        <label for="order" class="form-label">Dettagli dell'ordine</label>
-                        <input type="text" id="order" class="form-control text-muted" placeholder="Es: Campanello rotto, chiamare al telefono, ecc. ecc.">
-                    </div>
-                    <div class="col-12 text-center my-2 p-2">
-                        <select name="form-control" id="fork" class="p-2">
-                            <option>Con posate</option>
-                            <option>Senza posate</option>
-                        </select>
-                    </div>
-                    
-                </div>
-                <hr>
-                <h4>
-                    Pagamenti
-                </h4>
-                <div class="form-check m-2">
-                    <input type="radio" class="form-check-input" name="" id="">
-                    <label class="form-check-label">Consegna standard</label>
-                </div>
-                <div class="form-check m-2">
-                    <input type="radio" class="form-check-input" name="" id="">
-                    <label class="form-check-label">Consegna Premium</label>
-                </div>
-                <div class="row">
-                    <div class="col-12 my-3">
-                        <label for="creditcard" class="form-label">Numero carta</label>
-                        <input type="text" id="creditcard" class="form-control">
-                    </div>
-                    <div class="col-5">
-                        <label for="creditcard" class="form-label">Nome titolare</label>
-                        <input type="text" id="creditcard" class="form-control">
-                    </div>
-                    <div class="col-4">
-                        <label for="expiration" class="form-label">Data scadenza</label>
-                        <input type="text" id="creditcard" class="form-control">
-                    </div>
-                    <div class="col-3">
-                        <label for="creditcard" class="form-label">cvv</label>
-                        <input type="text" id="creditcard" class="form-control">
-                    </div>
-                </div>
-                <hr>
-                <button type="submit" class="btn btn-primary btn-block">
-                    Ordina per la consegna
-                </button>
-            </div>
-            <div class="col-4">
-                <span class="d-flex justify-content-between align-item-center my-2">
-                    <h4 class="bold">
-                        Carrello
+                    <hr>
+                    <h4>
+                        Pagamenti
                     </h4>
-                    <span class="badge bg-secondary rounded-pill my-2 p-2">
-                        4
+                    <div class="form-check m-2">
+                        <input type="radio" class="form-check-input" name="" id="">
+                        <label class="form-check-label">Consegna standard</label>
+                    </div>
+                    <div class="form-check m-2">
+                        <input type="radio" class="form-check-input" name="" id="">
+                        <label class="form-check-label">Consegna Premium</label>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 my-3">
+                            <label for="creditcard" class="form-label">Numero carta</label>
+                            <input type="text" id="creditcard" class="form-control">
+                        </div>
+                        <div class="col-5">
+                            <label for="creditcard" class="form-label">Nome titolare</label>
+                            <input type="text" id="creditcard" class="form-control">
+                        </div>
+                        <div class="col-4">
+                            <label for="expiration" class="form-label">Data scadenza</label>
+                            <input type="text" id="creditcard" class="form-control">
+                        </div>
+                        <div class="col-3">
+                            <label for="creditcard" class="form-label">cvv</label>
+                            <input type="text" id="creditcard" class="form-control">
+                        </div>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-submit">
+                        Ordina per la consegna
+                    </button>
+                </div>
+                <div class="col-5">
+                    <span class="d-flex justify-content-between align-item-center my-2">
+                        <h2 style="font-weight: bold;">
+                            CARRELLO
+                        </h2>
+                        <span id="piatti-presenti" class="badge rounded-pill my-2 p-2">
+                            {{ counter }}
+                        </span>
                     </span>
-                </span>
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <h4>
-                                Nome Prodotto
-                            </h4>
-                            <span class="">
-                                Descrizione
-                            </span>
-                        </div>
-                        <span class="text-muted">
-                            
-                        </span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>500
-                            <h4>
-                                Nome Prodotto
-                            </h4>
-                            <span class="">
-                                Descrizione
-                            </span>
-                        </div>
-                        <span class="text-muted">
-                            500
-                        </span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <h4>
-                                Nome Prodotto
-                            </h4>
-                            <span class="">
-                                Descrizione
-                            </span>
-                        </div>
-                        <span class="text-muted">
-                            500
-                        </span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <h4 class="text-success">
-                                Nome Prodotto
-                            </h4>
-                            <span class="">
-                                Descrizione
-                            </span>
-                        </div>
-                        <span class="text-muted">
-                            500
-                        </span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between">
-                        <div>
-                            <span class="">
-                                Totale
-                            </span>
-                        </div>
-                        <span>
-                            1000
-                        </span>
-                    </li>
-                </ul>
+                    <div class="container-list-group">
+                        <ul id="plates-list" class="plates-list text-center">
+                            <button @click="add(); AumentaNumeroPiatti()" class="add-btn px-3">
+                                +
+                            </button>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
+
+
 <style lang="scss" scoped>
     @import "../assets/scss/partials/carrello.scss";
-    .container{
-        background-color: #39526A;
-        color: #F7CD1F;
-    }
-    .container > .row{
-        margin-top: 100px;
-    }
 </style>
