@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 
 import Home from './pages/Homepage.vue';
 import Carrello from './pages/Carrello.vue';
-import Menu from './Menu.vue';
+import Menu from './pages/Menu.vue';
 import NotFound from './pages/NotFound.vue';
 
 const router = createRouter({
@@ -22,6 +22,12 @@ const router = createRouter({
         {
             path: '/menu',
             name: 'Menu',
+            component: Menu
+        },
+
+        {
+            path: '/menu:id',
+            name: 'menu',
             component: Menu
         },
 

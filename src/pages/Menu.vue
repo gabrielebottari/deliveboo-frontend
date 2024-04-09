@@ -149,5 +149,5 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@import "./assets/scss/partials/menu.scss";
+@import "../assets/scss/partials/menu.scss";
 </style>
