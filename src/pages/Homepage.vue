@@ -17,14 +17,12 @@ export default {
 
 },
     methods: {
-        GetFirstsRestourant() {
-            while (i < 4) {
-                {{ this.restourants[i].activity_name }}
-                i++;
+        methods: {
+            navigateToSingleRestourant(cardId) {
 
-                return this.restourants.activity_name
-            }
-        }
+            this.$router({ path: '/menu', query: { id: this.restourants[i].id }  });
+            },
+        },
     },
     created () {
         axios
@@ -34,7 +32,7 @@ export default {
                 // console.log("dalla homepage")
                 // console.log(response.data.results.data)
 
-                this.restourants = response.data.results.data.slice( 0, 4)
+                this.restourants = response.data.results.data
                 // console.log(this.restourants)
             });
 
@@ -47,7 +45,7 @@ export default {
                 // console.log(response.data.results)
                 
                 this.types = response.data.results
-                console.log(this.types)
+                // console.log(this.types)
             })
     },
     computed: {
@@ -101,22 +99,20 @@ export default {
 
     <section class="cards">
         <div class="row p-4">
-            <div class="my-card col-2 p-3" v-for="(restourant, i) in restourants">
-                <div v-if="i < 4">
-                    <a href="">
-                        <div class="card-img" >
-                            <img :src="this.restourants[i].image" alt="img ristorante">
+            <div class="my-card col-lg-3 col-md-5 p-3 m-2" v-for="(restourant, i) in restourants">
+                <a :href="/menu/ + restourants[i].id" @click="navigateToSingleRestourant(id)">
+                    <div class="card-img" :id="this.restourants[i].id">
+                        <img :src="this.restourants[i].image" alt="img ristorante">
+                    </div>
+                    <div class="my-card-body">
+                        <div class="my-card-title p-2">
+                            <h5>{{ this.restourants[i].activity_name }}</h5>
                         </div>
-                        <div class="my-card-body">
-                            <div class="my-card-title p-2">
-                                <h5>{{ this.restourants[i].activity_name }}</h5>
-                            </div>
-                            <div class="my-card-description p-3">
-                                <p>{{ this.restourants[i].description }}</p>
-                            </div>
+                        <div class="my-card-description p-3">
+                            <p>{{ this.restourants[i].description }}</p>
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -166,11 +162,10 @@ export default {
             
             .my-card
             {
-                margin: 10px;
                 color: $secondary;
                 border-radius: 10px;
                 background-color: $primary;
-
+                
                 a
                 {
                     text-decoration: none;
