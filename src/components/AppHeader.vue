@@ -44,8 +44,6 @@ export default {
         </div>
     </nav>
     <!--FINE NAVBAR-->
-
-    <!--DECIDERE SE METTERE O NO-->
    
 </template>
 

@@ -6,7 +6,6 @@ export default {
 
 data() {
   return {
-  counter: 0,
   piatti: [{
       nome: "Carbonara",
       descrizione: "Pasta con le uova e guanciale, aggiunta pepe nero",
@@ -27,8 +26,7 @@ data() {
       descrizione: "Tagliata di manzo",
       prezzo: "£35"
               },
-          ],
-          indicePiattoCorrente: 0
+          ]
       };
     },
 };
