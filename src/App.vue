@@ -4,7 +4,6 @@ import AppMain from './components/AppMain.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppCarrello from './components/AppCarrello.vue';
 
-
 import axios from 'axios';
 import { store } from './store'
 
@@ -44,6 +43,8 @@ export default {
     <AppMain />
 
     <AppFooter />
+
+    <AppCarrello />
 
     <AppCarrello />
 </template>
