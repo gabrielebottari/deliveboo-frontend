@@ -6,118 +6,7 @@ export default {
 
   data() {
     return {
-    counter: 0,
-    piatti: [{
-        nome: "Carbonara",
-        descrizione: "Pasta con le uova e guanciale, aggiunta pepe nero",
-        prezzo: "£15"
-                },
-                {
-        nome: "Amatriciana",
-        descrizione: "Pasta sugo",
-        prezzo: "£20"
-                },
-                {
-        nome: "Crudo di pesce",
-        descrizione: "Pesce crudo",
-        prezzo: "£25"
-                },
-                {
-        nome: "Tagliata di manzo",
-        descrizione: "Tagliata di manzo",
-        prezzo: "£35"
-                },
-            ],
-            indicePiattoCorrente: 0
-        };
-  },
-  methods: {
-    //metti metodi
-    add() {
-        const piattoCorrente = this.piatti[this.indicePiattoCorrente];
-      
-        /*
-            LI
-        */
-        const newLi = document.createElement('li');
-        newLi.classList.add('plates-list-item');
-        newLi.classList.add('m-4');
-
-        /*
-            DIV CONTENENTE NOME E PREZZO
-        */
-        const newDivNamePrice = document.createElement('div');
-        newDivNamePrice.classList.add(
-                                    'plates-name-price', 
-                                    'd-flex',
-                                    'justify-content-between'
-                                     );
-
-        newLi.appendChild(newDivNamePrice);
-
-            /*
-                I DUE SPAN
-            */
-            const h5Nome = document.createElement('h5');
-            h5Nome.textContent = piattoCorrente.nome;
-
-            const spanPrezzo = document.createElement('span');
-            spanPrezzo.textContent = piattoCorrente.prezzo;
-            //spanPrezzo.classList.add('plate-price');
-            spanPrezzo.style.fontWeight = 'bold';
-
-            newDivNamePrice.appendChild(h5Nome);
-            newDivNamePrice.appendChild(spanPrezzo);
-
-        /*
-            DIV CON LA DESCRIZIONE
-        */
-        const newDivDescription = document.createElement('div');
-        newDivDescription.classList.add(
-                                        'plate-description',
-                                        'm-2',
-                                        'text-start',
-                                        'd-flex',
-                                        'justify-content-between'
-                                    );
-
-        newLi.appendChild(newDivDescription);
-
-        const spanDescription = document.createElement('span');
-        spanDescription.textContent = piattoCorrente.descrizione;
-        newDivDescription.appendChild(spanDescription);
-
-        /*
-            BOTTONE REMOVE
-        */
-        const removeButton = document.createElement('button');
-        removeButton.classList.add('px-2');
-        removeButton.style.cssText = 'background-color: rgb(186, 121, 17); color: black; border: none; border-radius: 20px;';
-        removeButton.textContent = '-';
-        removeButton.addEventListener('click', () => {
-            newLi.remove();
-            this.DecrementaNumeroPiatti()
-        });
-        newDivDescription.appendChild(removeButton); // Aggiunta del bottone dentro newDivDescription
-
-        document.getElementById("plates-list").appendChild(newLi);
-
-    },
-    AumentaNumeroPiatti(){
-        this.counter++;
-        document.getElementById("piatti-presenti").innerText = `${this.counter}.`;
-    },
-    DecrementaNumeroPiatti(){
-        this.counter--;
-    }
-  },
-  mounted() {
-    axios
-        .get('http://127.0.0.1:8000/api/restaurants')
-        .then(res=>{
-            this.restaurants=res.data.results.data;
-            console.log(this.restaurants)
-        });
+     };
   },
 };
 </script>
@@ -226,7 +115,7 @@ export default {
                             
                         </ul>
                         <div class="text-center">
-                            <button @click="add(); AumentaNumeroPiatti()" class="add-btn px-3 mb-3">
+                            <button class="add-btn px-3 mb-3">
                                 +
                             </button>
                         </div>

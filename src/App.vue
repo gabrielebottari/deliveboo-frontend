@@ -5,13 +5,13 @@ import AppFooter from './components/AppFooter.vue';
 import AppCarrello from './components/AppCarrello.vue';
 
 import axios from 'axios';
-import { store } from './store'
+
 
 
 export default {
     data() {
         return {
-            store,
+
             restaurants:[]
         };
     },
@@ -23,17 +23,6 @@ export default {
     },  
     methods: {
     },
-    created () {
-        axios
-            .get(this.store.baseUrl)
-            // .get('http://127.0.0.1:8000/api/restaurants')
-            .then((response) => {
-                // console.log(response.data.results.data);
-                this.restaurants = response.data.results.data;
-                console.log(this.restaurants[1].activity_name)
-
-        });
-    }
 }
 </script>
 

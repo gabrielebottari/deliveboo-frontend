@@ -7,8 +7,6 @@ export default {
             
         };
     },
-    methods: {
-    }
 }
 </script>
 

@@ -1,61 +1,11 @@
 <script>
 import axios from 'axios';
 
-import { store } from '../store';
-
-
 export default {
   data() {
     return {
-        store,
-        restaurants: [],
-        types:[],
-
-        SearchType:"",
-        SelectedType: 'all',
-    };
-
-},
-    methods: {
-        navigateToSingleRestaurant(cardId) {
-
-        this.$router({ path: '/menu', query: { id: this.restaurants[i].id }  });
-        },
+        };
     },
-
-    created () {
-        axios
-            .get(this.store.restaurantsUrl)
-            .then((response) => {
-                // console.log("")
-                // console.log("dalla homepage")
-                // console.log(response.data.results.data)
-
-                this.restaurants = response.data.results.data
-                // console.log(this.restaurants)
-            });
-
-
-
-        axios
-            .get(this.store.typesUrl)
-            .then(response => {
-                // console.log("chiamata ai tipi")
-                // console.log(response.data.results)
-                
-                this.types = response.data.results
-                // console.log(this.types)
-            })
-    },
-    computed: {
-        FilteredTypes () {
-            if (this.SelectedType == 'all') {
-                return this.types
-            } else {
-                return this.restaurants.filter(restaurant => restaurants.types.name == this.SelectedType)
-            }
-        }
-    }
 };
 </script>
 
@@ -79,7 +29,7 @@ export default {
     <!--FINE SECTION HERO-->
 
     <!--parte dell'homepage che contiene LE CATEGORIE-->
-    <div class="categories-container p-4">
+    <!-- <div class="categories-container p-4">
         <div class="container">
             <div class="container">
                 <h1 class="text-center text-black">Migliori categorie</h1>
@@ -92,12 +42,12 @@ export default {
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!--CARD CON RISTORANTI CONSIGLIATI-->
 
         
-    <section class="cards">
+    <!-- <section class="cards">
         <div class="row p-4">
             <div class="my-card col-lg-3 col-md-5 p-3 m-2" v-for="(restaurant, i) in restaurants">
                 <a :href="/menu/ + restaurants[i].id" @click="navigateToSingleRestaurant(id)">
@@ -115,7 +65,7 @@ export default {
                 </a>
             </div>
         </div>
-    </section>
+    </section> -->
 
    <!--Fine Card-->
 </template>
