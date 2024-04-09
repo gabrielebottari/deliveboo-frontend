@@ -63,6 +63,8 @@ export default {
 
             const spanPrezzo = document.createElement('span');
             spanPrezzo.textContent = piattoCorrente.prezzo;
+            //spanPrezzo.classList.add('plate-price');
+            spanPrezzo.style.fontWeight = 'bold';
 
             newDivNamePrice.appendChild(h5Nome);
             newDivNamePrice.appendChild(spanPrezzo);
@@ -74,7 +76,9 @@ export default {
         newDivDescription.classList.add(
                                         'plate-description',
                                         'm-2',
-                                        'text-start'
+                                        'text-start',
+                                        'd-flex',
+                                        'justify-content-between'
                                     );
 
         newLi.appendChild(newDivDescription);
@@ -87,14 +91,14 @@ export default {
             BOTTONE REMOVE
         */
         const removeButton = document.createElement('button');
-        removeButton.classList.add('px-3');
-        removeButton.style.cssText  = 'background-color: rgba(245, 245, 245, 0.151); color: black;';
+        removeButton.classList.add('px-2');
+        removeButton.style.cssText = 'background-color: rgb(186, 121, 17); color: black; border: none; border-radius: 20px;';
         removeButton.textContent = '-';
         removeButton.addEventListener('click', () => {
             newLi.remove();
             this.DecrementaNumeroPiatti()
         });
-        newLi.appendChild(removeButton);
+        newDivDescription.appendChild(removeButton); // Aggiunta del bottone dentro newDivDescription
 
         document.getElementById("plates-list").appendChild(newLi);
 
@@ -219,10 +223,13 @@ export default {
                     </span>
                     <div class="container-list-group">
                         <ul id="plates-list" class="plates-list text-center">
-                            <button @click="add(); AumentaNumeroPiatti()" class="add-btn px-3">
+                            
+                        </ul>
+                        <div class="text-center">
+                            <button @click="add(); AumentaNumeroPiatti()" class="add-btn px-3 mb-3">
                                 +
                             </button>
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
