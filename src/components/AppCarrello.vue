@@ -119,7 +119,7 @@ mounted() {
       .get('http://127.0.0.1:8000/api/restaurants')
       .then(res=>{
           this.restaurants=res.data.results.data;
-          console.log(this.restaurants)
+          //console.log(this.restaurants)
       });
 },
 };
