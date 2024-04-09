@@ -17,13 +17,12 @@ export default {
 
 },
     methods: {
-        methods: {
-            navigateToSingleRestaurant(cardId) {
+        navigateToSingleRestaurant(cardId) {
 
-            this.$router({ path: '/menu', query: { id: this.restaurants[i].id }  });
-            },
+        this.$router({ path: '/menu', query: { id: this.restaurants[i].id }  });
         },
     },
+
     created () {
         axios
             .get(this.store.restaurantsUrl)

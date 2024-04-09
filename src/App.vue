@@ -45,8 +45,6 @@ export default {
     <AppFooter />
 
     <AppCarrello />
-
-    <AppCarrello />
 </template>
 
 <style lang="scss">

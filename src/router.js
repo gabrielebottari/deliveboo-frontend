@@ -4,6 +4,7 @@ import Home from './pages/Homepage.vue';
 import Carrello from './pages/Carrello.vue';
 import Menu from './pages/Menu.vue';
 import NotFound from './pages/NotFound.vue';
+import Checkout from './pages/Checkout.vue';
 
 const router = createRouter({
     history: createWebHistory(),
@@ -29,6 +30,12 @@ const router = createRouter({
             path: '/menu:id',
             name: 'menu',
             component: Menu
+        },
+
+        {
+            path: '/checkout',
+            name: 'Checkout',
+            component: Checkout
         },
 
         // NOT FOUND PAGE LINK
