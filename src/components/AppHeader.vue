@@ -38,7 +38,8 @@ export default {
                     </ul>
                 </div>
             </div>
-            <a href="#" class="login-button">Login</a>
+            <span class="text-secondary me-3">Sei un Ristoratore?</span>
+            <a href="http://127.0.0.1:8000/login" class="login-button">Login</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
