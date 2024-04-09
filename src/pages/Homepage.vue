@@ -8,7 +8,7 @@ export default {
   data() {
     return {
         store,
-        restourants: [],
+        restaurants: [],
         types:[],
 
         SearchType:"",
@@ -18,22 +18,22 @@ export default {
 },
     methods: {
         methods: {
-            navigateToSingleRestourant(cardId) {
+            navigateToSingleRestaurant(cardId) {
 
-            this.$router({ path: '/menu', query: { id: this.restourants[i].id }  });
+            this.$router({ path: '/menu', query: { id: this.restaurants[i].id }  });
             },
         },
     },
     created () {
         axios
-            .get(this.store.restourantsUrl)
+            .get(this.store.restaurantsUrl)
             .then((response) => {
                 // console.log("")
                 // console.log("dalla homepage")
                 // console.log(response.data.results.data)
 
-                this.restourants = response.data.results.data
-                // console.log(this.restourants)
+                this.restaurants = response.data.results.data
+                // console.log(this.restaurants)
             });
 
 
@@ -53,7 +53,7 @@ export default {
             if (this.SelectedType == 'all') {
                 return this.types
             } else {
-                return this.restourants.filter(restourant => restourants.types.name == this.SelectedType)
+                return this.restaurants.filter(restaurant => restaurants.types.name == this.SelectedType)
             }
         }
     }
@@ -97,19 +97,20 @@ export default {
 
     <!--CARD CON RISTORANTI CONSIGLIATI-->
 
+        
     <section class="cards">
         <div class="row p-4">
-            <div class="my-card col-lg-3 col-md-5 p-3 m-2" v-for="(restourant, i) in restourants">
-                <a :href="/menu/ + restourants[i].id" @click="navigateToSingleRestourant(id)">
-                    <div class="card-img" :id="this.restourants[i].id">
-                        <img :src="this.restourants[i].image" alt="img ristorante">
+            <div class="my-card col-lg-3 col-md-5 p-3 m-2" v-for="(restaurant, i) in restaurants">
+                <a :href="/menu/ + restaurants[i].id" @click="navigateToSingleRestaurant(id)">
+                    <div class="card-img" :id="this.restaurants[i].id">
+                        <img :src="this.restaurants[i].image" alt="img ristorante">
                     </div>
                     <div class="my-card-body">
                         <div class="my-card-title p-2">
-                            <h5>{{ this.restourants[i].activity_name }}</h5>
+                            <h5>{{ this.restaurants[i].activity_name }}</h5>
                         </div>
                         <div class="my-card-description p-3">
-                            <p>{{ this.restourants[i].description }}</p>
+                            <p>{{ this.restaurants[i].description }}</p>
                         </div>
                     </div>
                 </a>

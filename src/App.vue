@@ -13,7 +13,7 @@ export default {
     data() {
         return {
             store,
-            restourants:[]
+            restaurants:[]
         };
     },
     components: {
@@ -30,8 +30,8 @@ export default {
             // .get('http://127.0.0.1:8000/api/restaurants')
             .then((response) => {
                 // console.log(response.data.results.data);
-                this.restourants = response.data.results.data;
-                console.log(this.restourants[1].activity_name)
+                this.restaurants = response.data.results.data;
+                console.log(this.restaurants[1].activity_name)
 
         });
     }
