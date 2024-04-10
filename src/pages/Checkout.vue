@@ -2,9 +2,20 @@
 import axios from 'axios';
 
 export default {
-  name: 'PaymentComponent',
+  name: 'OrderPaymentComponent',
   data() {
     return {
+      orderData: {
+        name: '',
+        phone: '',
+        address: '',
+        payment_status: 'Completato', // non complichiamoci la vita'
+        notes: '',
+        plates: [ //per ora statico
+          { id: 3, quantity: 2 },
+          { id: 4, quantity: 3 }
+        ]
+      },
       dropinInstance: null,
     };
   },
@@ -13,7 +24,6 @@ export default {
   },
   methods: {
     setupBraintree() {
-      // Sostituisci 'yourTokenizationKey' con la tua chiave di tokenizzazione pubblica da Braintree
       braintree.dropin.create({
         authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b',
         selector: '#dropin-container',
@@ -36,18 +46,52 @@ export default {
           console.error('Errore nella richiesta del metodo di pagamento:', error);
           return;
         }
-        // Qui puoi inviare `payload.nonce` al tuo server
-        // In questo esempio, stamperemo solo il nonce nella console
-        console.log('Nonce del pagamento:', payload.nonce);
+        
+        // Invia i dettagli dell'ordine e il nonce del pagamento al server
+        this.submitOrder(payload.nonce);
       });
     },
+    async submitOrder(paymentNonce) {
+      // Aggiungi il nonce del pagamento ai dati dell'ordine
+      this.orderData.payment_nonce = paymentNonce;
+
+      try {
+        const response = await axios.post('http://localhost:8000/api/orders', this.orderData, {
+          headers: {
+            'Content-Type': 'application/json',
+            // Aggiungi qui altri header necessari, come quelli per l'autenticazione
+          },
+        });
+
+        console.log('Order submitted successfully:', response.data);
+        
+        this.$router.push({ path: '/', query: { payment: 'success' } });
+        
+      } catch (error) {
+        console.error('Failed to submit order:', error);
+        // Messaggio di errore
+      }
+    }
   },
 };
 </script>
 
 <template>
-    <div id="dropin-container" class="px-5 pt-5 mt-5"></div>
-    <button id="submit-button" class="button button--small button--green m-5" @click="submitPayment">Purchase</button>
+    <div class="mt-5 pt-5">
+        <form class="p-5 m-5 bg-success-subtle" @submit.prevent="submitOrder">
+            <input type="text" v-model="orderData.name" placeholder="Nome e Cognome" required>
+            <input type="text" v-model="orderData.phone" placeholder="Telefono" required>
+            <input type="text" v-model="orderData.address" placeholder="Indirizzo" required>
+            <textarea class="d-block mt-3" v-model="orderData.notes" placeholder="Note"></textarea>
+
+            <!-- qui dovrebbero esserci i piatti dinamici -->
+            
+            <div id="dropin-container" class="px-5 pt-5 mt-5"></div>
+
+            <button type="submit" id="submit-button" class="button button--small button--green m-5">Purchase</button>
+        </form>
+        
+    </div>
 </template>
 
 <style lang="scss" scoped>
