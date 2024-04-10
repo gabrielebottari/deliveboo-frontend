@@ -1,5 +1,4 @@
 <script>
-import { counter } from '@fortawesome/fontawesome-svg-core';
 import axios from 'axios';
 
 export default {
@@ -107,7 +106,7 @@ export default {
                             CARRELLO
                         </h2>
                         <span id="piatti-presenti" class="badge rounded-pill my-2 p-2">
-                            {{ counter }}
+                            ciao
                         </span>
                     </span>
                     <div class="container-list-group">
