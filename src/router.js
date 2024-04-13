@@ -21,14 +21,8 @@ const router = createRouter({
         },
 
         {
-            path: '/menu',
-            name: 'Menu',
-            component: Menu
-        },
-
-        {
-            path: '/menu:id',
-            name: 'menu',
+            path: '/restaurants/:id',
+            name: 'restaurants.show',
             component: Menu
         },
 
@@ -40,7 +34,7 @@ const router = createRouter({
 
         // NOT FOUND PAGE LINK
         {
-            path:'/:pathMatch(.*)*',
+            path:'/:pathMatch(.)',
             name: 'error',
             component: NotFound,
         },

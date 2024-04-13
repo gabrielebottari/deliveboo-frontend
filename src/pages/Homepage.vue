@@ -4,31 +4,124 @@ import axios from 'axios';
 export default {
   data() {
     return {
-            paymentSuccess: this.$route.query.payment === 'success'
+            paymentSuccess: this.$route.query.payment === 'success',
+            restaurants:[],
+            types:[],
+            currentPage: 1,
+            lastPage: 1,
+            currentPageFiltered: 1,
+            lastPageFiltered: 1,
+            selectedTypes: [], 
         };
     },
     methods: {
         clearMessage() {
             this.paymentSuccess = false;
+        },
+        /*
+        getRestaurantsByType(id, page){
+            axios
+                .get('http://127.0.0.1:8000/api/restaurants/types/' + id, {
+                    params: {
+                        page: page
+                    }
+                })
+                .then(response => {
+                    this.restaurants = response.data.results.data;
+                    this.currentPageFiltered = response.data.results.current_page;
+                    this.lastPageFiltered = response.data.results.last_page;
+                    console.log(response);
+                });
+        },
+        */
+        selectType(typeId) {
+            const index = this.selectedTypes.indexOf(typeId);
+            if (index === -1) {
+                this.selectedTypes.push(typeId);
+            } else {
+                this.selectedTypes.splice(index, 1);
+            }
+        },
+        getRestaurants(page){
+            axios
+                .get('http://127.0.0.1:8000/api/restaurants')
+                .then(response => {
+                    this.restaurants = response.data.results;
+                    // console.log(this.restaurants);
+                });
+        },
+        emptySelectedType(){
+            this.selectedTypes = [];
         }
+        /*
+        selectType(typeId){
+
+            // selectedType corrisponde al tipo cliccato? Se no... imposta il nuovo valore... se si mettilo a stringa vuota
+            this.selectedType = this.selectedType !== typeId ? typeId : '';
+    
+            // Fai partire la chiamata API per i ristoranti filtrati
+            if (this.selectedType) {
+                this.getRestaurantsByType(typeId, this.currentPageFiltered);
+            } else {
+                // Altrimenti parte la chiamata api per tutti i ristoranti
+                this.getRestaurants(this.currentPage);
+            }
+        },
+        */
     },
     mounted() {
-        if (this.paymentSuccess) {
-            setTimeout(() => {
-                this.paymentSuccess = false;
-            }, 5000); // Imposta il timeout a 5 secondi
-        }
+
+    },
+    created () {
+        
+        this.getRestaurants(this.currentPage);
+
+        axios
+            .get('http://127.0.0.1:8000/api/types')
+            .then(response => {
+                this.types = response.data.results;
+                // console.log(this.types);
+            });
+    },
+    computed: {
+        
+        filteredRestaurants() {
+            if (!this.selectedTypes.length) {
+            return this.restaurants; // Se non ci sono tipi selezionati, mostra tutti
+            }
+
+            return this.restaurants.filter(restaurant =>
+            this.selectedTypes.every(typeId =>
+                restaurant.types.some(type => type.id === typeId)
+            )
+            );
+        },
+
+        /*
+        filteredRestaurants() {
+            // Se non ci sono tipi selezionati, mostra tutti i ristoranti
+            if (!this.selectedTypes.length) {
+            return this.restaurants;
+            }
+            // Altrimenti, filtra l'array dei ristoranti
+            return this.restaurants.filter(restaurant =>
+            restaurant.types.some(type => this.selectedTypes.includes(type.id))
+            );
+        },
+        */
     }
 };
 </script>
 
 <template>
-    <!--SECTION HERO-->
-    <div class="container-fluid position-relative">
+    <!-- JUMBO -->
+    <div class="container-fluid">
+
         <div v-if="paymentSuccess" class="alert alert-success message-payment text-center w-50 mx-auto">
             Pagamento avvenuto con successo!
             <button class="btn" @click="clearMessage">X</button>
         </div>
+
         <section class="background-header">
             <div class="container d-flex align-items-center justify-content-center fs-1 text-white flex-column">
                 <h1>
@@ -40,6 +133,61 @@ export default {
             </div>
         </section>
     </div>
+    <!--end jumbo-->
+
+    <!--parte dell'homepage che contiene LE CATEGORIE-->
+
+    <div class="categories-container p-4">
+        <div class="container">
+            <div class="container">
+                <h1 class="text-center text-black">Guarda i ristoranti in base ai tuoi gusti!</h1>
+                <div class="row">
+                    <div class="col-2 pt-4" v-for="type in types">
+                        <button type="button" @click="selectType(type.id)" class="types d-flex flex-column align-items-center justify-content-center" :class="{ 'active': selectedTypes.includes(type.id) }">
+                            <div style="width: 60%; min-width: 50px;">
+                                <img class="w-100" :src="type.icon" alt="#">
+                            </div>
+                            
+                            <div>
+                                {{ type.name }}
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cards">
+        <div class="row p-4" style="max-height: 1000px; overflow-x: hidden; overflow-y: auto;"> 
+            <div v-if="filteredRestaurants.length != 0" class="my-card col-lg-3 col-md-5 p-3 m-2" v-for="restaurant in filteredRestaurants">
+                <router-link class="btn btn-primary" :to="{ name: 'restaurants.show', params: { id: restaurant.id } }">
+                    <div class="card-img">
+                        <img :src="restaurant.image" alt="restaurant.activity_name">
+                    </div>
+
+                    <div class="my-card-body">
+                        <div class="my-card-title p-2">
+                            <h5>{{ restaurant.activity_name }}</h5>
+                        </div>
+                        <div class="my-card-description p-3">
+                            <p>{{ restaurant.description }}</p>
+                        </div>
+                        <p v-for="type in restaurant.types">
+                            <span class="badge rounded-4 text-primary bg-secondary fs-5 mb-2">{{type.name}}</span>
+                        </p>
+                    </div>
+                </router-link>
+            </div>
+
+            <h1 v-else class="text-center text-primary fs-1">
+                <p>Nessun ristorante disponibile</p>
+                <button class="badge rounded-5 p-4 text-secondary bg-primary" @click="emptySelectedType()">Torna ai ristoranti</button>
+            </h1>
+        </div>
+    </section>
+
+       <!--Fine Card-->
 </template>
 
 <style lang="scss" scoped>
@@ -59,7 +207,7 @@ export default {
 
     .categories-container
     {
-        a
+        .types
         {
             text-decoration: none;
             font-weight: 500;
@@ -70,12 +218,14 @@ export default {
             color: $primary;
         }
 
-        a:hover
+        .types:hover, .types.active
         {
             color: $tertiary;
             border: 2px solid $primary;
             background-color: $primary;
+            
         }
+
     }
 
 
